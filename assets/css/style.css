@@ -1,0 +1,11 @@
+.section {
+	position:relative;
+	text-align:center;
+}
+
+.slidehead {
+	position:absolute;
+	top:50px;
+	left:100px;
+	text-align:left;
+}
