@@ -1,6 +1,61 @@
+* {
+	margin:0;
+	border:0;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	   -moz-box-sizing: border-box; /* Firefox, other Gecko */
+			box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+body {
+	background:#333;
+	color:#fff;
+	font-family:"Open Sans";
+	font-size:16px;
+}
+
 .section {
 	position:relative;
 	text-align:center;
+}
+
+h1, h2 {
+	font-family:Montserrat;
+	text-transform:uppercase;
+}
+
+h1 {
+	font-size:48px;
+}
+
+h2 {
+	font-size:20px;
+}
+
+h2.sub {
+	margin-top:20px;
+}
+
+p.subsub {
+	margin-top:20px;
+}
+
+body #fp-nav ul li a span, body .fp-slidesNav ul li a span {
+	top:0; left:0;
+	width:12px;
+	height:12px;
+	border:2px solid #fff;
+}
+
+body #fp-nav ul li a.active span, body .fp-slidesNav ul li a.active span {
+	background:#fff;
+}
+
+body .fp-controlArrow.fp-prev {
+	left:45px;
+}
+
+body .fp-controlArrow.fp-next {
+	right:45px;
 }
 
 .slidehead {
