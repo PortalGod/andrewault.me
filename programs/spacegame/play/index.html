@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<base href="/programs/spacegame/">
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="stylesheet" href="style.css">
+		
+		<!-- unity stuff -->
+		
+		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+		<script type="text/javascript">
+			var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+			if (document.location.protocol == 'https:')
+				unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+			document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		</script>
+		
+		<style type="text/css">
+			div.content {
+				margin: auto;
+				width: 960px;
+				margin-bottom:20px;
+			}
+			
+			#ChromeMissingUnityPlayer {
+				-webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+				   -moz-box-sizing: content-box; /* Firefox, other Gecko */
+						box-sizing: content-box; /* Opera/IE 8+ */
+				
+				background:none !important;
+				color:#aaa !important;
+			}
+			
+			#ChromeMissingUnityPlayer span {
+				color:#fff;
+			}
+			
+			div.broken,
+			div.missing {
+				margin: auto;
+				position: relative;
+				top: 50%;
+				width: 193px;
+			}
+			
+			div.broken a,
+			div.missing a {
+				height: 63px;
+				position: relative;
+				top: -31px;
+			}
+			
+			div.broken img,
+			div.missing img {
+				border-width: 0px;
+			}
+			
+			div.broken {
+				display: none;
+			}
+			
+			div#unityPlayer {
+				cursor: default;
+				width: 960px;
+				height:auto;
+			}
+			
+			ul {
+				position:relative;
+				font-size:0;
+			}
+			
+			li {
+				display:inline-block;
+				font-size:16px;
+				width:25%;
+				text-align:center;
+				cursor:pointer;
+			}
+			
+			li.active {
+				text-decoration:underline;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header>
+			<a href="" id="logo"></a>
+			
+			<nav>
+				<a href="">blog</a>
+				<a href="about">about</a>
+				<a href="media">media</a>
+				<a href="play">web player</a>
+				<a href="/">back</a>
+			</nav>
+		</header>
+		
+		<main>
+			<div class="content">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<p>Version:</p>
+			<ul>
+				<li id="live"><a data-src="20150603-2">20150603-2 (Current)</a></li>
+				<li><a data-src="20150603">20150603</a></li>
+				<li><a data-src="20150531">20150531</a></li>
+			</ul>
+		</main>
+		
+		<script>
+			var config = {
+				width: 960, 
+				height: 600,
+				params: { enableDebugging:"0" }
+				
+			};
+			
+			var u = new UnityObject2(config);
+
+			jQuery(function() {
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+				
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							
+							$brokenScreen.show();
+							
+							break;
+							
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							
+							$missingScreen.show();
+						
+							break;
+							
+						case "installed":
+							$missingScreen.remove();
+							
+							break;
+							
+						case "first":
+							break;
+					}
+				});
+				
+				var src = (window.location.hash.substr(1) || $('ul li#live a')[0].dataset.src);
+				$('ul li a[data-src="' + src + '"]').click();
+			});
+			
+			$('ul li a').click(function(e) {
+				$('ul li').removeClass('active');
+				$(this).parent().addClass('active');
+				
+				window.location.hash = this.dataset.src;
+				u.initPlugin(jQuery("#unityPlayer")[0], 'play/builds/' + this.dataset.src + '.unity3d');
+			});
+		</script>
+	</body>
+</html>

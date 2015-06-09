@@ -1,0 +1,22 @@
+header {
+	position:fixed;
+	top:0;
+	right:0;
+	left:0;
+	height:30px;
+	padding-left:50px;
+	text-align:left;
+	background:#000;
+	font-family:"Open sans";
+	font-size:14px;
+}
+
+header a {
+	line-height:30px;
+	text-decoration:none;
+	color:#fff;
+}
+
+body {
+	padding-top:30px;
+}

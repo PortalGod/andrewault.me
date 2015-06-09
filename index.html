@@ -3,8 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<script src="assets/js/jquery-2.1.3.min.js"></script>
-		<script src="assets/js/jquery.fullPage.min.js"></script>
 		<script src="assets/js/angular.min.js"></script>
 		<script src="assets/js/angular-route.min.js"></script>
 		
@@ -14,52 +12,46 @@
 		<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 	
 		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="assets/css/jquery.fullPage.css">
 	</head>
 
-	<body>
-		<div id="fullpage">
-			<div class="section">
-				<h1>My name is Andrew Ault.</h1>
-				<h2 class="sub">I do programming, web &amp; graphic design.</h2>
-				<p class="subsub">I'm too lazy to finish my website right now!</p>
-			</div>
-			
-			<div class="section">
-				<h1>about me</h1>
-			</div>
-			
-			<div class="section">
-				<h1 class="slidehead">Designs</h1>
+	<body class="scrollhack p">
+		<ul id="pages" class="scrollhack c">
+			<li id="page1" class="centeredbg">
+				<div class="centered">
+					<h1>My name is Andrew Ault.</h1>
+					<h2 class="sub">I do programming, web &amp; graphic design.</h2>
+				</div>
 				
-				<div class="slide" ng-repeat="design in files.design">
-					{{design}}
-				</div>
-			</div>
+				<a href="#page2" class="down">vvv what I'm about vvv</a>
+			</li>
 			
-			<div class="section">
-				<div class="slide" ng-repeat="website in websites">
+			<li id="page2" class="centeredbg">
+				<div class="centered">
+					<h2>About me</h2>
+					<p>I'm too lazy to finish this website!</p>
 				</div>
-			</div>
+			</li>
 			
-			<div class="section">
-				<div class="slide" ng-repeat="program in programs">
+			<li class="centeredbg" ng-repeat="(name, cat) in projects" ng-attr-id="page{{$index + 3}}">
+				<div class="centered container">
+					<h3 class="header" ng-bind="name"></h3>
+
+					<ul>
+						<li class="tile noselect" ng-repeat="project in cat" style="background-image:url(assets/programs/{{project[1]}})">
+							<a ng-href="{{name}}/{{project[2]}}" ng-bind="project[0]"></a>
+						</li>
+
+						<li class="tile background noselect"><a href="{{name}}/background">My Background</a></li>
+					</ul>
 				</div>
-			</div>
+			</li>
 			
-			<div class="section">
-				<h1>contact</h1>
-			</div>
-		</div>
+			<li id="page6" class="centeredbg">
+				<div class="centered">
+					<h2>contact me</h2>
+					<p>shout your messages into the night sky</p>
+				</div>
+			</li>
+		</ul>
 	</body>
-		
-	<script>
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				navigation: true,
-				slidesNavigation: true,
-				slidesNavPosition: 'bottom'
-			});
-		});
-	</script>
 </html>

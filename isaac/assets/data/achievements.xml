@@ -1,0 +1,186 @@
+<achievements gfxroot="resources/gfx/ui/achievement/">
+	<achievement id="1" text='You unlocked "Magdalene"' desc="have 7 or more max red hearts at one time" gfx="Achievement_Magdalene.png" />
+	<achievement id="2" text='You unlocked "Cain"' desc="hold 55 pennies at one time" gfx="Achievement_Cain.png" />
+	<achievement id="3" text='You unlocked "Judas"' desc="kill Satan for the 1st time" gfx="Achievement_Judas.png" />
+	<achievement id="4" text='You unlocked "The Womb" -Chapter 4- Mother sleeps' desc="beat Mom for the 1st time" gfx="Achievement_TheWomb.png" />
+	<achievement id="5" text='You unlocked "The Harbingers" The Horsemen are loose' desc="beat Mom for the 1st time" gfx="Achievement_Harbingers.png" />
+	<achievement id="6" text='"A Cube of Meat" has appeared in the basement' desc="beat Mom for the 1st time" gfx="Achievement_CubeOfMeat.png" />
+	<achievement id="7" text='"The Book of Revelations" has appeared in the basement' desc="beat a horseman for the 1st time" gfx="Achievement_BookOfRevelations.png" />
+	<achievement id="8" text='"A Noose" has appeared in the basement' desc="beat Mom's Heart 3 times" gfx="Achievement_Transcendence.png" />
+	<achievement id="9" text='"The Nail" has appeared in the basement' desc="beat Boss Rush with Demon Isaac" gfx="Achievement_TheNail.png" />
+	<achievement id="10" text='"A Quarter" has appeared in the basement' desc="beat Mom's Heart 8 times" gfx="Achievement_AQuarter.png" />
+	<achievement id="11" text='"A Fetus in a Jar" has appeared in the basement' desc="beat Mom's Heart 9 times" gfx="Achievement_AFetusInAJar.png" />
+	<achievement id="12" text='"A Small Rock" has appeared in the basement' desc="Destroy 100 tinted rocks" gfx="Achievement_ASmallRock.png" />
+	<achievement id="13" text='"Monstro&apos;s Tooth" has appeared in the basement' desc="beat Basement II for the 1st time" gfx="Achievement_MonstrosTooth.png" />
+	<achievement id="14" text='"Lil Chubby" has appeared in the basement' desc="beat Caves II for the 1st time" gfx="Achievement_LilChubby.png" />
+	<achievement id="15" text='"Loki&apos;s Horns" has appeared in the basement' desc="beat Lokii for the 1st time" gfx="Achievement_LokisHorns.png" />
+	<achievement id="16" text='You unlocked "Something From The Future!" in the basement' desc="beat the basement 40 times" gfx="Achievement_Steven.png" />
+	<achievement id="17" text='You unlocked "Something Cute" in the caves' desc="beat the caves 30 times" gfx="Achievement_CHAD.png" />
+	<achievement id="18" text='You unlocked "Something Sticky" in the depths' desc="beat the depths 20 times" gfx="Achievement_Gishy.png" />
+	<achievement id="19" text='"A Bandage" has appeared in the basement' desc="make a super bandage girl" gfx="Achievement_SuperBandageGirl.png" />
+	<achievement id="20" text='"A Cross" has appeared in the basement' desc="kill Isaac with Maggy" gfx="Achievement_TheRelic.png" />
+	<achievement id="21" text='"A Bag of Pennies" has appeared in the basement' desc="kill Isaac with Cain" gfx="Achievement_CoinBag.png" />
+	<achievement id="22" text='"The Book of Sin" has appeared in the basement' desc="kill all 7 sins" gfx="Achievement_BookOfSin.png" />
+	<achievement id="23" text='"Little Gish" has appeared in the basement' desc="kill Gish" gfx="Achievement_LittleGish.png" />
+	<achievement id="24" text='"Little Steven" has appeared in the basement' desc="kill Steven" gfx="Achievement_LittleSteven.png" />
+	<achievement id="25" text='"Little C.H.A.D." has appeared in the basement' desc="kill C.H.A.D." gfx="Achievement_LittleChad.png" />
+	<achievement id="26" text='"A Gamekid" has appeared in the basement' desc="visit 10 arcades" gfx="Achievement_GameKid.png" />
+	<achievement id="27" text='"A Halo" has appeared in the basement' desc="kill Mom using the bible" gfx="Achievement_TheHalo.png" />
+	<achievement id="28" text='"Mr. Mega!" has appeared in the basement' desc="destroy 10 tinted rocks" gfx="Achievement_MrMega.png" />
+	<achievement id="29" text='Isaac now holds... "The D6"' desc="Kill Isaac with ???" gfx="Achievement_D6.png" />
+	<achievement id="30" text='"The Scissors" has appeared in the basement' desc="die 100 times" gfx="Achievement_Scissors.png" />
+	<achievement id="31" text='"The Parasite" has appeared in the basement' desc="collect 2 of Bob's Head, Dead Cat, Max's Head, Tammy's Head" gfx="Achievement_TheParasite.png" />
+	<achievement id="32" text='You unlocked "???"' desc="beat Mom's Heart 10 times" gfx="Achievement_Bluebaby.png" />
+	<achievement id="33" text='Everything is Terrible!!! The game just got harder!' desc="beat Mom's Heart 5 times" gfx="Achievement_EverythingIsTerrible.png" />
+	<achievement id="34" text='"It Lives!" Your futures past waits' desc="beat Mom's Heart 11 times" gfx="Achievement_ItLives.png" />
+	<achievement id="35" text='"Mom&apos;s Contact" has appeared in the basement' desc="become mom" gfx="Achievement_MomsContact.png" />
+	<achievement id="36" text='"The Necronomicon" has appeared in the basement' desc="use the Death Card 4 times" gfx="Achievement_Necronomicon.png" />
+	<achievement id="37" text='"Basement Boy" achieved' desc="beat the Basement/Cellar without taking damage" gfx="Achievement_BasementBoy.png" />
+	<achievement id="38" text='"Spelunker Boy" achieved' desc="beat the Caves/Catacombs without taking damage" gfx="Achievement_SpelunkerBoy.png" />
+	<achievement id="39" text='"Dark Boy" achieved' desc="beat the Depths/Necropolis without taking damage" gfx="Achievement_DarkBoy.png" />
+	<achievement id="40" text='"Mamas Boy" achieved' desc="beat the Womb/Utero without taking damage" gfx="Achievement_MamasBoy.png" />
+	<achievement id="41" text='"Golden God!" achieved' desc="beat ??? and Lamb" gfx="Achievement_GoldenGod.png" />
+	<achievement id="42" text='You unlocked "Eve"' desc="don't pick up any hearts for 2 levels in a row" gfx="Achievement_Eve.png" />
+	<achievement id="43" text='"Mom&apos;s Knife" has appeared in the basement' desc="kill Satan with Isaac" gfx="Achievement_MomsKnife.png" />
+	<achievement id="44" text='"The Razor" has appeared in the basement' desc="kill Satan with Eve" gfx="Achievement_TheRazor.png" />
+	<achievement id="45" text='"Guardian Angel" has appeared in the basement' desc="kill Satan with Maggy" gfx="Achievement_GuardianAngel.png" />
+	<achievement id="46" text='"A Bag of Bombs" has appeared in the basement' desc="kill Satan with Cain" gfx="Achievement_BombBag.png" />
+	<achievement id="47" text='"A Demon Baby!" has appeared in the basement' desc="beat Dark Room with Demon Isaac" gfx="Achievement_DemonBaby.png" />
+	<achievement id="48" text='"A Forget Me Now" has appeared in the basement' desc="kill Satan with ???" gfx="Achievement_ForgetMeNow.png" />
+	<achievement id="49" text='"The D20" has appeared in the basement' desc="beat The Chest with Isaac" gfx="Achievement_D20.png" />
+	<achievement id="50" text='"The Crucifix" has appeared in the basement' desc="beat The Chest with Maggy" gfx="Achievement_CelticCross.png" />
+	<achievement id="51" text='"Abel" has appeared in the basement' desc="beat Dark Room with Cain" gfx="Achievement_Abel.png" />
+	<achievement id="52" text='"Curved Horn" has appeared in the basement' desc="beat Dark Room with Judas" gfx="Achievement_CurvedHorn.png" />
+	<achievement id="53" text='"Sacrificial Dagger" has appeared in the basement' desc="beat Chest with Eve" gfx="Achievement_SacrificialKnife.png" />
+	<achievement id="54" text='"Blood Lust" has appeared in the basement' desc="kill Isaac with Samson" gfx="Achievement_BloodyLust.png" />
+	<achievement id="55" text='"Blood Penny" has appeared in the basement' desc="beat Chest with Samson" gfx="Achievement_BloodyPenny.png" />
+	<achievement id="56" text='"Blood Rights" has appeared in the basement' desc="kill Satan with Samson" gfx="Achievement_BloodRights.png" />
+	<achievement id="57" text='"The Polaroid" has appeared in the basement' desc="beat the cathedral 5 times" gfx="Achievement_ThePolaroid.png" />
+	<achievement id="58" text='"Dad&apos;s Key" has appeared in the basement' desc="collect a golden key" gfx="Achievement_DadsKey.png" />
+	<achievement id="59" text='"The Blue Candle" has appeared in the basement' desc="donate 900 pennies to the store" gfx="Achievement_BlueCandle.png" />
+	<achievement id="60" text='"Burnt Penny" has appeared in the basement' desc="beat Challenge #13" gfx="Achievement_BurntPenny.png" />
+	<achievement id="61" text='"Lucky Toe!" has appeared in the basement' desc="Blow up 20 shop keepers" gfx="Achievement_LuckyToe.png" />
+	<achievement id="62" text='"Epic Fetus" has appeared in the basement' desc="Beat Challenge #19" gfx="Achievement_EpicFetus.png" />
+	<achievement id="63" text='"SMB Super Fan" has appeared in the basement' desc="Beat Challenge #14" gfx="Achievement_SuperFan.png" />
+	<achievement id="64" text='"Counterfeit Coin" has appeared in the basement' desc="Play the shell game 100 times" gfx="Achievement_CounterfeitPenny.png" />
+	<achievement id="65" text='"Guppy&apos;s Hairball" has appeared in the basement' desc="Become Guppy" gfx="Achievement_GuppysHairball.png" />
+	<achievement id="66" text='You unlocked "A Forgotten Horsemen" in the basement' desc="take 10 items from Angel rooms" gfx="Achievement_Conquest.png" />
+	<achievement id="67" text='You unlocked "Samson"' desc="beat 2 levels in a row without taking damage" gfx="Achievement_Samson.png" />
+	<achievement id="68" text='You unlocked "Something Icky!" in the basement' desc="beat Cathedral 10 times" gfx="Achievement_Triachnid.png" />
+	<achievement id="69" text='!Platinum God! OMG!' desc="collect all items in the game and unlock all secrets and endings minus 'the soul' and its 5 unlockable items" gfx="Achievement_PlatinumGod.png" />
+	<achievement id="70" text='"Isaac&apos;s Head" has appeared in the basement' desc="beat Boss Rush with Isaac" gfx="Achievement_IsaacsHead.png" />
+	<achievement id="71" text='"Maggy&apos;s Faith" has appeared in the basement' desc="beat Dark Room with Maggy" gfx="Achievement_MaggysFaith.png" />
+	<achievement id="72" text='"Judas&apos; Tongue" has appeared in the basement' desc="kill Satan with Judas" gfx="Achievement_JudasTongue.png" />
+	<achievement id="73" text='"???&apos;s Soul" has appeared in the basement' desc="beat Dark Room with ???" gfx="Achievement_BlueBabysSoul.png" />
+	<achievement id="74" text='"Samson&apos;s Lock" has appeared in the basement' desc="beat Dark Room with Samson" gfx="Achievement_SamsonsLock.png" />
+	<achievement id="75" text='"Cain&apos;s Eye" has appeared in the basement' desc="beat Chest with Cain" gfx="Achievement_CainsEye.png" />
+	<achievement id="76" text='"Eve&apos;s Bird Foot" has appeared in the basement' desc="kill Isaac with Eve" gfx="Achievement_EvesBirdFoot.png" />
+	<achievement id="77" text='"The Left Hand" has appeared in the basement' desc="beat Chest with Judas" gfx="Achievement_TheLeftHand.png" />
+	<achievement id="78" text='"The Negative" has appeared in the basement' desc="beat Sheol 5 times" gfx="Achievement_TheNegative.png" />
+	<achievement id="79" text='You unlocked "Demon Isaac"' desc="make 3 deals with the devil in one run" gfx="Achievement_Azazel.png" />
+	<achievement id="80" text='You unlocked "Lazarus"' desc="have 4 or more soul hearts at one time" gfx="Achievement_Lazarus.png" />
+	<achievement id="81" text='You unlocked "Eden"' desc="beat the womb for the 1st time" gfx="Achievement_Eden.png" />
+	<achievement id="82" text='You unlocked "The Soul"' desc="finish the game's final secret" gfx="Achievement_thelost.png" />
+	<achievement id="83" text='"Dead Boy" achieved' desc="beat the Chest or Dark Room without taking damage" gfx="Achievement_DeadBoy.png" />
+	<achievement id="84" text='The Real Platinum God' desc="100% of the game" gfx="Achievement_RealPlatinumGod.png" />
+	<achievement id="85" text='"Lucky Rock" has appeared in the basement' desc="destroy 100 rocks" gfx="Achievement_LuckyRock.png" />
+	<achievement id="86" text='The Cellar' desc="Beat all possible bosses in the basement" gfx="Achievement_TheCellar.png" />
+	<achievement id="87" text='The Catacombs' desc="Beat all possible bosses in the caves" gfx="Achievement_TheCatacombs.png" />
+	<achievement id="88" text='The Necropolis' desc="Beat all possible bosses in the depths" gfx="Achievement_Necropolis.png" />
+	<achievement id="89" text='"Rune of Hagalaz" has appeared in the basement' desc="Beat Challenge #1" gfx="Achievement_RuneOfHagalaz.png" />
+	<achievement id="90" text='"Rune of Jera" has appeared in the basement' desc="Beat Challenge #2" gfx="Achievement_RuneOfJera.png" />
+	<achievement id="91" text='"Rune of Ehwaz" has appeared in the basement' desc="Beat Challenge #3" gfx="Achievement_RuneOfEhwaz.png" />
+	<achievement id="92" text='"Rune of Dagaz" has appeared in the basement' desc="Beat Challenge #4" gfx="Achievement_RuneOfDagaz.png" />
+	<achievement id="93" text='"Rune of Ansuz" has appeared in the basement' desc="Beat Challenge #5" gfx="Achievement_RuneOfAnsuz.png" />
+	<achievement id="94" text='"Rune of Perthro" has appeared in the basement' desc="Beat Challenge #6" gfx="Achievement_RuneOfPerthro.png" />
+	<achievement id="95" text='"Rune of Berkano" has appeared in the basement' desc="Beat Challenge #7" gfx="Achievement_RuneOfBerkano.png"/>
+	<achievement id="96" text='"Rune of Algiz" has appeared in the basement' desc="Beat Challenge #8" gfx="Achievement_RuneOfAlgiz.png" />
+	<achievement id="97" text='"Chaos Card" has appeared in the basement' desc="Beat Challenge #9" gfx="Achievement_TheChaosCard.png" />
+	<achievement id="98" text='"Credit Card" has appeared in the basement' desc="Beat Challenge #10" gfx="Achievement_CreditCard.png" />
+	<achievement id="99" text='"Rules Card" has appeared in the basement' desc="Beat Challenge #11" gfx="Achievement_RulesCard.png" />
+	<achievement id="100" text='"Card Against Humanity" has appeared in the basement' desc="Beat Challenge #12" gfx="Achievement_CardAgainstHumanity.png" />
+	<achievement id="101" text='"Swallowed Penny" has appeared in the basement' desc="Beat Challenge #15" gfx="Achievement_SwallowedPenny.png" />
+	<achievement id="102" text='"Robo Baby 2.0" has appeared in the basement' desc="Beat Challenge #16" gfx="Achievement_Robobaby20.png" />
+	<achievement id="103" text='"Death&apos;s Touch" has appeared in the basement' desc="Beat Challenge #17" gfx="Achievement_DeathsTouch.png" />
+	<achievement id="104" text='"Technology .5" has appeared in the basement' desc="Beat Challenge #18" gfx="Achievement_Tech5.png" />
+	<achievement id="105" text='"Missing No." has appeared in the basement' desc="Beat Challenge #20" gfx="Achievement_MissingNo.png" />
+	<achievement id="106" text='"Isaac&apos;s Tears" has appeared in the basement' desc="Kill Isaac with Isaac" gfx="Achievement_IsaacsTears.png" />
+	<achievement id="107" text='"Guillotine" has appeared in the basement' desc="Kill Isaac with Judas" gfx="Achievement_Guillotine.png" />
+	<achievement id="108" text='"Judas&apos; Shadow" has appeared in the basement' desc="beat Boss Rush with Judas" gfx="Achievement_JudasShadow.png" />
+	<achievement id="109" text='"Maggy&apos;s Bow" has appeared in the basement' desc="beat Boss Rush with Maggy" gfx="Achievement_MaggysBow.png" />
+	<achievement id="110" text='"Cain&apos;s Other Eye" has appeared in the basement' desc="beat Boss Rush with Cain" gfx="Achievement_CainsOtherEye.png" />
+	<achievement id="111" text='"Black Lipstick" has appeared in the basement' desc="beat Dark Room with Eve" gfx="Achievement_BlackLipstick.png" />
+	<achievement id="112" text='"Eve&apos;s Mascara" has appeared in the basement' desc="beat Boss Rush with Eve" gfx="Achievement_EvesMascara.png" />
+	<achievement id="113" text='"Fate" has appeared in the basement' desc="beat Chest with ???" gfx="Achievement_Fate.png" />
+	<achievement id="114" text='"???&apos;s Only Friend" has appeared in the basement' desc="beat Boss Rush with ???" gfx="Achievement_BlueBabysOnlyFriend.png" />
+	<achievement id="115" text='"Samson&apos;s Chains" has appeared in the basement' desc="beat Boss Rush with Samson" gfx="Achievement_SamsonsChains.png" />
+	<achievement id="116" text='"Lazarus&apos; Rags" has appeared in the basement' desc="kill Isaac with Lazarus" gfx="Achievement_LazarusRags.png" />
+	<achievement id="117" text='"Broken Ankh" has appeared in the basement' desc="kill Satan with Lazarus" gfx="Achievement_BrokenAnkh.png" />
+	<achievement id="118" text='"Store Credit" has appeared in the basement' desc="beat Chest with Lazarus" gfx="Achievement_StoreCredit.png" />
+	<achievement id="119" text='"Pandora&apos;s Box" has appeared in the basement' desc="beat Dark Room with Lazarus" gfx="Achievement_PandorasBox.png" />
+	<achievement id="120" text='"Suicide King" has appeared in the basement' desc="beat Boss Rush with Lazarus" gfx="Achievement_SuicideKing.png" />
+	<achievement id="121" text='"Blank Card" has appeared in the basement' desc="kill Isaac with Eden" gfx="Achievement_BlankCard.png" />
+	<achievement id="122" text='"Book of Secrets" has appeared in the basement' desc="kill Satan with Eden" gfx="Achievement_BookOfSecrets.png" />
+	<achievement id="123" text='"Mysterious Paper" has appeared in the basement' desc="beat Chest with Eden" gfx="Achievement_MysteriousPaper.png" />
+	<achievement id="124" text='"Mystery Sack" has appeared in the basement' desc="beat Dark Room with Eden" gfx="Achievement_MysterySack.png" />
+	<achievement id="125" text='"Undefined" has appeared in the basement' desc="beat Boss Rush with Eden" gfx="Achievement_Undefined.png" />
+	<achievement id="126" text='"Satanic Bible" has appeared in the basement' desc="kill Isaac with Demon Isaac" gfx="Achievement_SatanicBible.png" />
+	<achievement id="127" text='"Daemon&apos;s Tail" has appeared in the basement' desc="kill Satan with Demon Isaac" gfx="Achievement_DemonTail.png" />
+	<achievement id="128" text='"Abaddon" has appeared in the basement' desc="beat Chest with Demon Isaac" gfx="Achievement_Abaddon.png" />
+	<achievement id="129" text='"Isaac&apos;s Heart" has appeared in the basement' desc="kill Isaac with The Lost" gfx="Achievement_IsaacsHeart.png" />
+	<achievement id="130" text='"The Mind" has appeared in the basement' desc="kill Satan with The Lost" gfx="Achievement_TheMind.png" />
+	<achievement id="131" text='"The Body" has appeared in the basement' desc="beat Chest with The Lost" gfx="Achievement_TheBody.png" />
+	<achievement id="132" text='"The Soul" has appeared in the basement' desc="beat Dark Room with The Lost" gfx="Achievement_TheSoul.png" />
+	<achievement id="133" text='"A D100" has appeared in the basement' desc="beat Boss Rush with The Lost" gfx="Achievement_D100.png" />
+	<achievement id="134" text='"Blue Map" has appeared in the basement' desc="donate 10 pennies to the shop" gfx="Achievement_BlueMap.png" />
+	<achievement id="135" text='"There&apos;s Options" has appeared in the basement' desc="donate 50 pennies to the shop" gfx="Achievement_TheresOptions.png" />
+	<achievement id="136" text='"Black Candle" has appeared in the basement' desc="donate 150 pennies to the shop" gfx="Achievement_BlackCandle.png" />
+	<achievement id="137" text='"Red Candle" has appeared in the basement' desc="donate 400 pennies to the shop" gfx="Achievement_RedCandle.png" />
+	<achievement id="138" text='"Stop Watch" has appeared in the basement' desc="donate 999 pennies to the shop" gfx="Achievement_Stopwatch.png" />
+	<achievement id="139" text='"Wire Coat Hanger" has appeared in the basement' desc="beat Mom's Heart 4 times" gfx="Achievement_WireCoatHanger.png" />
+	<achievement id="140" text='"Ipecac" has appeared in the basement' desc="beat Mom's Heart 6 times" gfx="Achievement_Ipecac.png" />
+	<achievement id="141" text='"Experimental Treatment" has appeared in the basement' desc="beat Mom's Heart 7 times" gfx="Achievement_ExperimentalTreatment.png" />
+	<achievement id="142" text='Krampus unlocked' desc="take 20 items from devil rooms" gfx="Achievement_Krampus.png" />
+	<achievement id="143" text='"Head of Krampus" has appeared in the basement' desc="kill Krampus" gfx="Achievement_HeadOfKrampus.png" />
+	<achievement id="144" text='You made a Super Meat Boy' desc="make a super meat boy" gfx="Achievement_SuperMeatBoy.png" />
+	<achievement id="145" text='"Butter Bean" has appeared in the basement' desc="destroy 100 poops" gfx="Achievement_ButterBean.png" />
+	<achievement id="146" text='"Little Baggy" has appeared in the basement' desc="collect 2 needle items" gfx="Achievement_LittleBaggy.png" />
+	<achievement id="147" text='"Blood Bag" has appeared in the basement' desc="use the blood donation machine 30 times" gfx="Achievement_BloodBag.png" />
+	<achievement id="148" text='"A D4" has appeared in the basement' desc="blow up 30 arcade machines" gfx="Achievement_D4.png" />
+	<achievement id="149" text='"The Lost Poster" has appeared in the basement' desc="beat Dark Room with Isaac" gfx="Achievement_LostPoster.png" />
+	<achievement id="150" text='"Rubber Cement" has appeared in the basement' desc="beat Mom's Heart 2 times" gfx="Achievement_RubberCement.png" />
+	<achievement id="151" text='Store Upgrade lv.1' desc="donate 20 pennies to the shop" gfx="Achievement_StoreUpgrade1.png" />
+	<achievement id="152" text='Store Upgrade lv.2' desc="donate 100 pennies to the shop" gfx="Achievement_StoreUpgrade2.png" />
+	<achievement id="153" text='Store Upgrade lv.3' desc="donate 200 pennies to the shop" gfx="Achievement_StoreUpgrade3.png" />
+	<achievement id="154" text='Store Upgrade lv.4' desc="donate 600 pennies to the shop" gfx="Achievement_StoreUpgrade4.png" />
+	<achievement id="155" text='You unlocked the Angel bosses' desc="beat Chest or Dark Room" gfx="Achievement_Angels.png" />
+	<achievement id="156" text='"Godhead" has appeared in the basement' desc="beat Satan, Isaac, ???, Lamb, &amp; Boss Rush on hard with The Lost" gfx="Achievement_Godhead.png" />
+
+	<achievement id="157" text="You unlocked Challenge #4 Darkness Falls" gfx="Achievement_Challenge04.png" />
+	<achievement id="158" text="You unlocked Challenge #5 The Tank" gfx="Achievement_Challenge05.png" />
+	<achievement id="159" text="You unlocked Challenge #6 Solar System" gfx="Achievement_Challenge06.png" />
+	<achievement id="160" text="You unlocked Challenge #7 Suicide King" gfx="Achievement_Challenge07.png" />
+	<achievement id="161" text="You unlocked Challenge #8 Cat got your Tongue" gfx="Achievement_Challenge08.png" />
+	<achievement id="162" text="You unlocked Challenge #9 Demo Man" gfx="Achievement_Challenge09.png" />
+	<achievement id="163" text="You unlocked Challenge #10 Cursed!" gfx="Achievement_Challenge10.png" />
+	<achievement id="164" text="You unlocked Challenge #11 Glass Cannon" gfx="Achievement_Challenge11.png" />
+	<achievement id="165" text="You unlocked Challenge #19 The Family Man" gfx="Achievement_Challenge19.png" />
+	<achievement id="166" text="You unlocked Challenge #20 Purist" gfx="Achievement_Challenge20.png" />
+
+	<achievement id="167" text='You unlocked "Lost Baby"' desc="beat Mom's Heart on hard mode with Isaac" gfx="Achievement_LostBaby.png" />
+	<achievement id="168" text='You unlocked "Cute Baby"' desc="beat Mom's Heart on hard mode with Maggy" gfx="Achievement_CuteBaby.png" />
+	<achievement id="169" text='You unlocked "Crow Baby"' desc="beat Mom's Heart on hard mode with Eve" gfx="Achievement_CrowBaby.png" />
+	<achievement id="170" text='You unlocked "Shadow Baby"' desc="beat Mom's Heart on hard mode with Judas" gfx="Achievement_ShadowBaby.png" />
+	<achievement id="171" text='You unlocked "Glass Baby"' desc="beat Mom's Heart on hard mode with Cain" gfx="Achievement_GlassBaby.png" />
+	<achievement id="172" text='You unlocked "Wrapped Baby"' desc="beat Mom's Heart on hard mode with Lazarus" gfx="Achievement_WrappedBaby.png" />
+	<achievement id="173" text='You unlocked "Begotten Baby"' desc="beat Mom's Heart on hard mode with Azazel" gfx="Achievement_BegottenBaby.png" />
+	<achievement id="174" text='You unlocked "Dead Baby"' desc="beat Mom's Heart on hard mode with ???" gfx="Achievement_DeadBaby.png" />
+	<achievement id="175" text='You unlocked "-0- Baby"' desc="beat Mom's Heart on hard mode with The Lost" gfx="Achievement_0Baby.png" />
+	<achievement id="176" text='You unlocked "Glitch Baby"' desc="beat Mom's Heart on hard mode with Eden" gfx="Achievement_GlitchBaby.png" />
+	<achievement id="177" text='You unlocked "Fighting Baby"' desc="beat Mom's Heart on hard mode with Samson" gfx="Achievement_FightingBaby.png" />
+	<achievement id="178" text='You became Lord of the Flies' desc="become Lord of the Flies" gfx="Achievement_LordOfTheFlies.png" />
+
+	<!-- beat Sheol 10 times -->
+	<!--<achievement id="179" text='You unlocked "Sister&apos;s Vis" in Sheol' gfx="Achievement_SistersVis.png" />-->
+</achievements>
+

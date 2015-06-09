@@ -1,0 +1,78 @@
+main {
+	padding-bottom:80px;
+}
+
+header {
+	display:block;
+	position:relative;
+	width:600px;
+	left:50%;
+	margin:40px 0 20px -300px;
+	text-align:center;
+	
+	font-size:0;
+}
+
+#logo {
+	display:block;
+	width:600px;
+	height:200px;
+	border:1px dashed #ccc;
+}
+
+header nav a {
+	display:inline-block;
+	width:120px;
+	
+	font-size:20px;
+	line-height:40px;
+}
+
+a:hover {
+	color:#ccc;
+}
+
+main {
+	display:block;
+	position:relative;
+	width:1000px;
+	left:50%;
+	margin-left:-500px;
+}
+
+.tumblr_posts {
+	padding:0;
+}
+
+.tumblr_post {
+	border-bottom:1px solid #666;
+}
+
+.tumblr_title {
+	text-transform:uppercase;
+	text-align:center;
+	font-size:32px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+
+main p, main ul {
+	margin-bottom:20px;
+}
+
+.tumblr_posts ul, ul.list {
+	padding-left:40px;
+}
+
+.tumblr_posts ul li, ul.list li {
+	list-style:disc outside;
+}
+
+main h2 {
+	text-align:center;
+}
+
+hr {
+	border-top:1px solid #aaa;
+	margin-bottom:20px;
+}
