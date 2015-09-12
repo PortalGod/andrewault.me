@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+	
+		<link rel="stylesheet/less" href="assets/css/style.less">
+		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+		<script src="assets/js/angular.min.js"></script>
+		
+		<script src="assets/js/main.js"></script>
+	</head>
+
+	<body ng-app="app" ng-controller="ctrl">
+		<header>
+			<a id="top" href="#intro"></a>
+
+			<nav>
+				<a href="#about">About me</a>
+				<a ng-repeat="(cat, nah) in locals.projects" ng-href="#{{cat}}" ng-bind="cat"></a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
+		
+		<ul id="pages">
+			<li class="page centerbg" id="intro">
+				<div class="content">
+					<div id="logo"></div>
+					
+					<h1>My name is Andrew Ault.</h1>
+					<h2 class="sub">I do programming, web &amp; graphic design.</h2>
+				</div>
+			</li>
+			
+			<li class="page centerbg" id="about">
+				aaaa
+			</li>
+			
+			<li class="page" ng-repeat="(cat, projects) in locals.projects" ng-attr-id="{{cat}}">
+				<div class="grid">
+					<a ng-repeat="(dir, project) in projects" 
+						href 
+						class="project" 
+						ng-style="{'background-image': 'url(/{{cat}}/{{dir}}/preview.png)'}"
+						ng-click="popup(project)">
+						
+						<span ng-bind="project.info.name"></span>
+					</a>
+				</div>
+			</li>
+			
+			<li class="page centerbg" id="contact">
+				bbbb
+			</li>
+		</ul>
+		
+		<div id="modal">
+			<a href id="close" ng-click="hidePopup()"></a>
+			
+			<div id="carousel"></div>
+			
+			<div id="info"></div>
+		</div>
+	</body>
+</html>

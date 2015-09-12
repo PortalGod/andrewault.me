@@ -1,0 +1,9 @@
+{
+	"name": 	"Student Presidency Posters",
+	"desc": 	"",
+	"files": 	[
+		["half1.png", "full1.png"],
+		["half2.png", "full2.png"],
+		["half3.png", "full3.png"]
+	]
+}
