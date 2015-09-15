@@ -3,8 +3,6 @@ var express = require('express'),
 
 var app = module.exports = express();
 
-app.use(express.static(__dirname + '/public'));
-
 //automatically get all of our projects
 var locals = {
 	projects: {}
@@ -35,6 +33,15 @@ for(var i = 0; i < dirs.length; i++) {
 }
 
 //real stuff
+//static files
+app.use(express.static(__dirname + '/public'));
+
+app.get('*', function(req, res, next) {
+	console.log(req.method, req.url);
+	next()
+});
+
+//the main page
 app.get('*', function(req, res) {
 	//this is hacky but cheaper than a rendering engine (?)
 	var body = fs.readFileSync('./public/home.html', {encoding: 'utf8'});
@@ -50,8 +57,13 @@ app.get('*', function(req, res) {
 	res.end();
 });
 
+//404
+app.get('*', function(req, res) {
+	res.status(404).type('html').end('404');
+});
 
-var server = app.listen(process.env.port || 80, function() {
+//start it up
+var server = app.listen(process.env.port || 8080, function() {
 	var addr = server.address();
 	
 	console.log('server started at', addr.address + ':' + addr.port);
