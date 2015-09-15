@@ -36,10 +36,10 @@ for(var i = 0; i < dirs.length; i++) {
 //static files
 app.use(express.static(__dirname + '/public'));
 
-app.get('*', function(req, res, next) {
+/* app.get('*', function(req, res, next) {
 	console.log(req.method, req.url);
 	next()
-});
+}); */
 
 //the main page
 app.get('*', function(req, res) {
