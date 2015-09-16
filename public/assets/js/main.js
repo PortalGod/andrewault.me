@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			header.classList.remove('sticky');
 		
 		//link highlighting
-		if(modal.style.display == 'none') {
+		if(modal.style.display != 'block') {
 			scroll = targetY === false ? scroll : targetY;
 
 			for(var i = 0; i < links.length; i++) {
@@ -156,16 +156,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		var cat = getElem('/' + parts[0]);
 		window.scroll(0, cat.offsetTop);
 		
-		/* if(parts[1]) {
+		if(parts[1]) {
 			console.log(parts[1]);
 			
 			for(var i = 0; i < cat.children[0].children.length; i++) {
 				var project = cat.children[0].children[i];
 				
-				console.log(project);
-				//if(project.attributes.dataName) 
+				if(project.attributes['data-name'].value == parts[1])
+					angular.element(project).triggerHandler('click');
 			}
-		} */
+		}
 	}
 			
 	

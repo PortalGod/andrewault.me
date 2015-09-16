@@ -44,7 +44,7 @@
 					<a ng-repeat="(dir, project) in projects" 
 					   href 
 					   class="project"
-					   data-name="project.info.name"
+					   ng-attr-data-name="{{project.info.name}}"
 					   ng-style="{'background-image': 'url({{project.info.path}}/preview.png)'}"
 					   ng-click="$event.preventDefault(); popup(project)">
 						
