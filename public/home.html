@@ -65,15 +65,17 @@
 						<img ng-src="{{curProject.info.path}}/{{curProject.info.files[curProject.curFile][0]}}">
 					</a>
 					
-					<a id="left"></a>
-					<a id="right"></a>
+					<a href id="left" ng-click="moveCarousel(-1)"></a>
+					<a href id="right" ng-click="moveCarousel(1)"></a>
 				</div>
 				
 				<div id="thumbnails">
-					<a ng-repeat="image in curProject.info.files"
+					<a ng-repeat="image in curProject.info.files track by $index"
 					   href
 					   class="thumb"
-					   ng-style="{'background-image': 'url({{curProject.info.path}}/preview.png)'}">
+					   ng-style="{'background-image': 'url({{curProject.info.path}}/{{image[1]}})'}"
+					   ng-class="{active: curProject.curFile == $index}"
+					   ng-click="curProject.curFile = $index">
 					</a>
 				</div>
 				

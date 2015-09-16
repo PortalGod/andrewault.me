@@ -77,6 +77,15 @@ app.controller('ctrl', function($scope, $window) {
 		//reset location
 		scrollEvent();
 	}
+	
+	$scope.moveCarousel = function(dir) {
+		$scope.curProject.curFile += (dir / Math.abs(dir));
+		
+		if($scope.curProject.curFile < 0)
+			$scope.curProject.curFile += $scope.curProject.info.files.length;
+		else
+			$scope.curProject.curFile = $scope.curProject.curFile % $scope.curProject.info.files.length;
+	}
 });
 
 //normal stuff

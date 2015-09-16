@@ -288,11 +288,77 @@ ul#pages {
 				}
 			}
 			
-			#left {
+			#left, #right {
+				position:absolute;
 				display:block;
 				width:50px;
 				height:100%;
+				top:0;
+				
+				font-size:0;
+				
+				transition:background 0.1s;
+				
+				&:hover {
+					background:rgba(0, 0, 0, 0.2);
+				}
+				
+				&:before {
+					content:"";
+					
+					position:relative;
+					display:block;
+					width:0;
+					height:0;
+					top:50%;
+					left:50%;
+					margin-top:-20px;
+					margin-left:-15px;
+					
+					border-top:20px solid transparent;
+					border-bottom:20px solid transparent;
+				}
+			}
+			
+			#left {
+				left:0;
+			
+				&:before {
+					border-right:30px solid #fff;
+				}
+			}
+			
+			#right {
+				right:0;
+			
+				&:before {
+					border-left:30px solid #fff;
+				}
 			}
 		}
+		
+		#thumbnails {
+			width:880px;
+			height:100px;
+			margin:10px;
+			
+			text-align:center;
+			
+			.thumb {
+				display:inline-block;
+				width:100px;
+				height:100px;
+				margin:0 10px;
+				
+				background-position:center center;
+				background-size:contain;
+				background-repeat:no-repeat;
+				opacity:0.5;
+				
+				&.active, &:hover {
+					opacity:1;
+				}
+			}
+		}	
 	}
 }
