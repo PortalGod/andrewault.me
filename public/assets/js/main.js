@@ -79,12 +79,21 @@ app.controller('ctrl', function($scope, $window) {
 	}
 	
 	$scope.moveCarousel = function(dir) {
-		$scope.curProject.curFile += (dir / Math.abs(dir));
+		if(dir) {
+			$scope.curProject.curFile += (dir / Math.abs(dir));
+
+			if($scope.curProject.curFile < 0)
+				$scope.curProject.curFile += $scope.curProject.info.files.length;
+			else
+				$scope.curProject.curFile = $scope.curProject.curFile % $scope.curProject.info.files.length;
+		}
 		
-		if($scope.curProject.curFile < 0)
-			$scope.curProject.curFile += $scope.curProject.info.files.length;
-		else
-			$scope.curProject.curFile = $scope.curProject.curFile % $scope.curProject.info.files.length;
+		var path = $scope.curProject.info.path.substr(1);
+		
+		if($scope.curProject.curFile)
+			path += '/' + $scope.curProject.curFile;
+		
+		setPath(path);
 	}
 });
 
@@ -160,19 +169,26 @@ document.addEventListener('DOMContentLoaded', function() {
 	if(path) {
 		var parts = path.split('/');
 		
-		console.log(parts);
-		
+		//+ 1 just to make sure the header gets styled
 		var cat = getElem('/' + parts[0]);
-		window.scroll(0, cat.offsetTop);
+		window.scroll(0, cat.offsetTop + 1);
 		
 		if(parts[1]) {
-			console.log(parts[1]);
-			
 			for(var i = 0; i < cat.children[0].children.length; i++) {
 				var project = cat.children[0].children[i];
 				
 				if(project.attributes['data-name'].value == parts[1])
 					angular.element(project).triggerHandler('click');
+			}
+			
+			if(parts[2]) {
+				var $scope = angular.element(cat).scope();
+				
+				$scope.$apply(function() {
+					$scope.locals.projects[parts[0]][parts[1]].curFile = parseInt(parts[2]);
+
+					$scope.moveCarousel();
+				});
 			}
 		}
 	}
