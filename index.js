@@ -25,21 +25,38 @@ for(var i = 0; i < dirs.length; i++) {
 				info: JSON.parse(fs.readFileSync('./public/' + dir + '/' + project + '/info.json'))
 			}
 		}
+		
+		//for web dev
+		files[project] = dir;
 	}
-	
-	//coming soon
-	for(var j = 0; j < list.length; j++)
-		files[list[j]] = dir;
 }
 
 //real stuff
+//shortcuts for files
+app.get('/:project', function(req, res, next) {
+	var project = req.params.project;
+	var dir = files[project];
+	
+	if(dir && (dir == 'webdev' || locals.projects[dir][project].info.type == 'web')) {
+		var path = '/' + dir + '/' + project;
+		
+		var body = fs.readFileSync('./public' + path + '/index.html', {encoding: 'utf8'});
+		
+		var index = body.indexOf('<head>') + 6;
+		
+		res.write(body.substr(0, index));
+		
+		res.write('<base href="' + path + '/">');
+		
+		res.write(body.substr(index));
+		
+		res.end();
+	} else
+		next();
+});
+
 //static files
 app.use(express.static(__dirname + '/public'));
-
-/* app.get('*', function(req, res, next) {
-	console.log(req.method, req.url);
-	next()
-}); */
 
 //the main page
 app.get('*', function(req, res) {

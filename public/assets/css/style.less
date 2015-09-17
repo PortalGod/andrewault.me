@@ -9,6 +9,7 @@
 
 //variables
 @font: 		Montserrat;
+@bodyFont: 	Open Sans;
 @transDur: 	0.3s;
 
 //the basics
@@ -362,6 +363,23 @@ ul#pages {
 					opacity:1;
 				}
 			}
-		}	
+		}
+		
+		#external {
+			width:100%;
+			height:100px;
+			
+			text-align:center;
+			
+			a {
+				display:inline-block;
+				height:20px;
+				margin:40px 0;
+				
+				font-size:20px;
+				text-decoration:none;
+				font-family:@bodyFont;
+			}
+		}
 	}
 }

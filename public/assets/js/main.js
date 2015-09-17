@@ -1,6 +1,6 @@
 /*
 TODO:
-	add title support	
+	:)
 */
 
 //angular setup

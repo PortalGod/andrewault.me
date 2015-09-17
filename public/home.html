@@ -64,29 +64,35 @@
 		
 		<div id="modal" ng-click="hidePopup()">
 			<div id="window" ng-click="$event.stopPropagation()">
-				<div id="carousel">
-					<a class="image" ng-href="{{curProject.info.path}}/{{curProject.info.files[curProject.curFile][1]}}">
-						<img ng-src="{{curProject.info.path}}/{{curProject.info.files[curProject.curFile][0]}}">
-					</a>
-					
-					<a href id="left" ng-click="moveCarousel(-1)"></a>
-					<a href id="right" ng-click="moveCarousel(1)"></a>
+				<div ng-show="curProject.info.cat == 'designs' || curProject.info.type == 'design'">
+					<div id="carousel">
+						<a class="image" ng-href="{{curProject.info.path}}/{{curProject.info.files[curProject.curFile][1]}}">
+							<img ng-src="{{curProject.info.path}}/{{curProject.info.files[curProject.curFile][0]}}">
+						</a>
+
+						<a href id="left" ng-click="moveCarousel(-1)"></a>
+						<a href id="right" ng-click="moveCarousel(1)"></a>
+					</div>
+
+					<div id="thumbnails">
+						<a ng-repeat="image in curProject.info.files track by $index"
+						   class="thumb"
+						   ng-href="{{curProject.info.path}}{{$index ? '/' + $index : ''}}"
+						   ng-style="{'background-image': 'url({{curProject.info.path}}/{{image[1]}})'}"
+						   ng-class="{active: curProject.curFile == $index}"
+						   ng-click="$event.preventDefault(); curProject.curFile = $index; moveCarousel()">
+						</a>
+					</div>
 				</div>
 				
-				<div id="thumbnails">
-					<a ng-repeat="image in curProject.info.files track by $index"
-					   class="thumb"
-					   ng-href="{{curProject.info.path}}{{$index ? '/' + $index : ''}}"
-					   ng-style="{'background-image': 'url({{curProject.info.path}}/{{image[1]}})'}"
-					   ng-class="{active: curProject.curFile == $index}"
-					   ng-click="$event.preventDefault(); curProject.curFile = $index; moveCarousel()">
-					</a>
+				<div id="external" ng-show="curProject.info.cat == 'webdev' || curProject.info.type == 'web'">
+					<a ng-href="/{{curProject.info.name}}">Go to website</a>
 				</div>
-				
-				
-				{{curProject}}
 			
-				<div id="info"></div>
+				<div id="info">
+					<h1 ng-bind="curProject.info.title"></h1>
+					<p ng-bind="curProject.info.desc"></p>
+				</div>
 			</div>
 		</div>
 	</body>
