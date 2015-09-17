@@ -1,4 +1,5 @@
 {
-	"name": 	"Unnamed Space Game",
-	"desc": 	""
+	"title": 	"Unnamed Space Game",
+	"desc": 	"",
+	"web": 		true
 }

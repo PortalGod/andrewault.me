@@ -44,8 +44,8 @@
 			<li class="page" ng-repeat="(cat, projects) in locals.projects" ng-attr-id="{{cat}}">
 				<div class="grid">
 					<a ng-repeat="(dir, project) in projects" 
-					   href 
 					   class="project"
+					   ng-href="{{project.info.path}}"
 					   ng-attr-data-name="{{project.info.name}}"
 					   ng-style="{'background-image': 'url({{project.info.path}}/preview.png)'}"
 					   ng-click="$event.preventDefault(); popup(project)">
@@ -73,8 +73,8 @@
 				
 				<div id="thumbnails">
 					<a ng-repeat="image in curProject.info.files track by $index"
-					   href
 					   class="thumb"
+					   ng-href="{{curProject.info.path}}{{$index ? '/' + $index : ''}}"
 					   ng-style="{'background-image': 'url({{curProject.info.path}}/{{image[1]}})'}"
 					   ng-class="{active: curProject.curFile == $index}"
 					   ng-click="curProject.curFile = $index; moveCarousel()">
