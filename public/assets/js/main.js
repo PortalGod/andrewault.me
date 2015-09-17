@@ -66,7 +66,7 @@ app.controller('ctrl', function($scope, $window) {
 		modal.style.display = 'block';
 		
 		//change our location
-		setPath(project.info.path.substr(1));
+		$scope.moveCarousel();
 	}
 	
 	$scope.hidePopup = function() {
