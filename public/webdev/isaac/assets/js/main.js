@@ -155,7 +155,7 @@ app.directive('gridItem', function() {
 			
 			item.onmouseover = function() {				
 				scope.$root.curItem = scope.all[scope.getTab()][item.id];
-				//scope.$apply();
+				scope.$apply();
 				
 				var pos = item.style.backgroundPosition.match('(.*)px (.*)px');
 				
