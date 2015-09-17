@@ -12,6 +12,8 @@
 		<script src="/assets/js/angular.min.js"></script>
 		
 		<script src="/assets/js/main.js"></script>
+		
+		<title>Andrew Ault</title>
 	</head>
 
 	<body ng-app="app" ng-controller="ctrl">
@@ -77,7 +79,7 @@
 					   ng-href="{{curProject.info.path}}{{$index ? '/' + $index : ''}}"
 					   ng-style="{'background-image': 'url({{curProject.info.path}}/{{image[1]}})'}"
 					   ng-class="{active: curProject.curFile == $index}"
-					   ng-click="curProject.curFile = $index; moveCarousel()">
+					   ng-click="$event.preventDefault(); curProject.curFile = $index; moveCarousel()">
 					</a>
 				</div>
 				

@@ -1,3 +1,8 @@
+/*
+TODO:
+	add title support	
+*/
+
 //angular setup
 var app = angular.module('app', []).run(function($rootScope) { $rootScope.locals = locals; });
 
@@ -36,8 +41,11 @@ var setPath = function(path) {
 //:roll eyes emoji:
 var scrollEvent;
 
+//for titles
+var baseTitle = 'Andrew Ault';
+
 //angular stuff
-app.controller('ctrl', function($scope, $window) {
+app.controller('ctrl', function($scope, $document) {
 	//add info to our projects
 	for(var cat in $scope.locals.projects) {
 		if($scope.locals.projects.hasOwnProperty(cat)) {
@@ -67,6 +75,9 @@ app.controller('ctrl', function($scope, $window) {
 		
 		//change our location
 		$scope.moveCarousel();
+		
+		//and our title
+		$document[0].title = project.info.title + ' - ' + baseTitle;
 	}
 	
 	$scope.hidePopup = function() {
@@ -76,6 +87,9 @@ app.controller('ctrl', function($scope, $window) {
 		
 		//reset location
 		scrollEvent();
+		
+		//and our title
+		$document[0].title = baseTitle;
 	}
 	
 	$scope.moveCarousel = function(dir) {
@@ -98,6 +112,7 @@ app.controller('ctrl', function($scope, $window) {
 });
 
 //normal stuff
+
 document.addEventListener('DOMContentLoaded', function() {
 	//sticky header
 	//don't have to get these every scroll
@@ -174,18 +189,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		window.scroll(0, cat.offsetTop + 1);
 		
 		if(parts[1]) {
-			for(var i = 0; i < cat.children[0].children.length; i++) {
-				var project = cat.children[0].children[i];
-				
-				if(project.attributes['data-name'].value == parts[1])
-					angular.element(project).triggerHandler('click');
-			}
+			var $scope = angular.element(cat).scope();
+			var project = $scope.locals.projects[parts[0]][parts[1]];
+			
+			$scope.popup(project);
 			
 			if(parts[2]) {
-				var $scope = angular.element(cat).scope();
-				
 				$scope.$apply(function() {
-					$scope.locals.projects[parts[0]][parts[1]].curFile = parseInt(parts[2]);
+					project.curFile = parseInt(parts[2]);
 
 					$scope.moveCarousel();
 				});
