@@ -334,6 +334,7 @@ app.run(function($rootScope, $q, $http, $location) {
 	
 	//tab stuff
 	
+	//why do I have to do this
 	if(!$location.hash()) $location.hash('/');
 	
 	var tabs = {all: 0, items: 1, cards: 2, trinkets: 3, pills: 4, runes: 5, misc: 6};
