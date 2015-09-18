@@ -425,21 +425,7 @@
 		[43, 	"Cursed Skull", 			0,				0,				0,				0,				0,				0,				0,				0,				"Teleports the player to the last cleared room upon taking damage leaving the player with less than one heart."],
 		[44, 	"Safety Cap", 				0,				0,				0,				0,				0,				0,				0,				0,				"Increases the chance to find pills."],
 		[45, 	"Ace of Spades", 			0,				0,				0,				0,				0,				0,				0,				0,				"Increases the chance to find cards."],
-		[46, 	"Isaac's Fork", 			0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to heal the player for half a heart upon clearing the current room."],
-		[48, 	"A Missing Page", 			0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to trigger the effect of The Necronomicon upon taking damage."],
-		[49, 	"Bloody Penny", 			0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to spawn half a red heart upon picking up a coin."],
-		[50, 	"Burnt Penny", 				0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to spawn a bomb upon picking up a coin."],
-		[51, 	"Flat Penny", 				0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to spawn a key upon picking up a coin."],
-		[52, 	"Counterfeit Penny", 		0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to spawn a coin upon picking up a coin."],
-		[53, 	"Tick", 					0,				0,				0,				0,				0,				0,				0,				0,				"Takes away 15% health of any enemy with more than 60 HP. Restores one red heart upon entering a boss room. Can not be removed once picked up."],
-		[54, 	"Isaac's Head", 			0,				0,				0,				0,				0,				0,				0,				0,				"Gives a familiar that shoots piercing shots."],
-		[55, 	"Maggy's Faith", 			0,				0,				0,				0,				0,				0,				0,				0,				"Gives an eternal heart at the start of every floor."],
-		[56, 	"Judas' Tongue", 			0,				0,				0,				0,				0,				0,				0,				0,				"Causes all red heart devil deals to only cost one heart."],
-		[57, 	"???'s Soul", 				0,				0,				0,				0,				0,				0,				0,				0,				"Gives a familiar that floats around the current room and shoots spectral and homing tears."],
-		[58, 	"Samson's Lock", 			0,				"&+ 0.5", 		0,				0,				0,				0,				0,				0,				"Gives a chance for a damage up for the current room upon entering a room."],
-		[59, 	"Cain's Eye", 				0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to trigger the effect of The Compass for the current floor at the start of every floor."],
-		[60, 	"Eve's Bird Foot", 			0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to trigger the effect of Dead Bird for the current room upon killing an enemy."],
-		[61, 	"The Left Hand", 			0,				0,				0,				0,				0,				0,				0,				0,				"Replaces all chests with red chests."]
+		[46, 	"Isaac's Fork", 			0,				0,				0,				0,				0,				0,				0,				0,				"Gives a chance to heal the player for half a heart upon clearing the current room."]
 	],
 	"pills": [
 		[0, 	"Bad Gas", 					0,				0,				0,				0,				0,				0,				0,				0,				"Causes the player to fart."],
@@ -480,5 +466,6 @@
 		[33, 	"Perthro", 					0, 				0,				0,				0,				0,				0,				0,				0,				"Same effect as the D6."],
 		[34, 	"Berkano", 					0, 				0,				0,				0,				0,				0,				0,				0,				"Spawns three blue flies and three blue spiders."],
 		[35, 	"Algiz", 					0, 				0,				0,				0,				0,				0,				0,				0,				"Gives the player an invulnerability effect for 30 seconds."]
+		
 	]
 }}

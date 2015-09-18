@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		
-		<script src="/assets/js/angular.min.js"></script>
+		<script src="/assets/js/angular.js"></script>
 		
 		<script src="assets/js/main.js"></script>
 
@@ -27,15 +27,14 @@
 				<h1>TBOI: Rebirth Items</h1>
 				
 				<input type="text" id="search" ng-model="filter" ng-change="updateSearch();" placeholder="Search...">
-				<button type="button" class="close" id="clear" ng-show="filter.length" ng-click="clearSearch();"><span>&times;</span></button>
 			</div>
 			
 			<nav>
-				<a ng-repeat="(tab, data) in all" ng-class="isTab(tab)" ng-click="setTab(tab)" ng-bind="tab"></a>
+				<a ng-repeat="tab in tabs" ng-class="isTab(tab[0])" ng-click="setTab(tab[0])" ng-bind="tab[0]"></a>
 			</nav>
 			
 			<ul id="grid">
-				<li class="px" ng-repeat="item in all[getTab()] track by $index" ng-show="item" ng-attr-style="{{item.style}}" ng-attr-id="{{item.id}}" grid-item>{{val(item)}}</li>
+				<li class="px" ng-repeat="item in tabs[getTab()][1] track by $index" id="{{$index}}" style="{{item.style}}" grid-item ng-bind="item.name"></li>
 			</ul>
 			
 			<div id="inspect">
@@ -44,16 +43,16 @@
 				</div>
 				
 				<span ng-show="curItem">
-					<a id="big" class="px"></a>
+					<div id="big" class="px"></div>
 					
 					<div id="left">
-						<a id="name" ng-href="{{url(curItem)}}" target="_blank" ng-bind="curItem.name"></a>
+						<h2 ng-bind="curItem.name"></h2>
 						<h3 ng-bind="curItem.desc"></h3>
 						
 						<p ng-bind="curItem.effect"></p>
 					</div>
 					
-					<div id="right" ng-hide="isTab('challenges')">
+					<div id="right">
 						<table class="info">
 							<tr>
 								<td>type</td>
@@ -96,31 +95,6 @@
 								<td ng-class="color(curItem.luck)">{{strip(curItem.luck)}}</td>
 								<td ng-class="{green:curItem.coins}">{{curItem.coins}}</td>
 								<td ng-class="{green:curItem.bombs}">{{curItem.bombs}}</td>
-							</tr>
-						</table>
-					</div>
-					
-					<div id="right" ng-show="isTab('challenges')">
-						<table class="info">
-							<tr class="dubs">
-								<td>items</td>
-								<td>{{curItem.items}}</td>
-							</tr>
-							<tr>
-								<td>trinket</td>
-								<td ng-bind="curItem.trinkets"></td>
-							</tr>
-							<tr>
-								<td>pill</td>
-								<td ng-bind="curItem.pills"></td>
-							</tr>
-							<tr>
-								<td>card</td>
-								<td ng-bind="curItem.cards"></td>
-							</tr>
-							<tr>
-								<td>player</td>
-								<td ng-bind="curItem.player"></td>
 							</tr>
 						</table>
 					</div>

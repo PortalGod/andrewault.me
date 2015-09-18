@@ -1,4 +1,5 @@
 <pocketitems>
+	<card id="0" name="NULL" />
 	<card description="Where journey begins" hud="00_TheFool" id="1" name="0 - The Fool" />
 	<card description="May you never miss your goal" hud="01_TheMagician" id="2" name="I - The Magician" />
 	<card description="Mother is watching you" hud="02_TheHighPriestess" id="3" name="II - The High Priestess" />
