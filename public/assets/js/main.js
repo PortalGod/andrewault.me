@@ -112,7 +112,6 @@ app.controller('ctrl', function($scope, $document) {
 });
 
 //normal stuff
-
 document.addEventListener('DOMContentLoaded', function() {
 	//sticky header
 	//don't have to get these every scroll
@@ -196,11 +195,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			
 			if(parts[2]) {
 				$scope.$apply(function() {
-					project.curFile = parseInt(parts[2]);
+					project.curFile = Math.max(0, Math.min(project.info.files.length - 1, parseInt(parts[2])));
 
 					$scope.moveCarousel();
 				});
-			}
+			} else
+				$scope.$apply();
 		}
 	}
 			

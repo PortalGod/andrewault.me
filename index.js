@@ -4,36 +4,47 @@ var express = require('express'),
 var app = module.exports = express();
 
 //automatically get all of our projects
-var locals = {
-	projects: {}
-}
-
-var dirs = ['designs', 'webdev', 'programs'];
+var locals = {}
 var files = {};
 
-for(var i = 0; i < dirs.length; i++) {
-	var dir = dirs[i];
-	var list = fs.readdirSync('./public/' + dir);
-	
-	locals.projects[dir] = {}; //list;
-	
-	for(var j = 0; j < list.length; j++) {
-		var project = list[j];
-		
-		if(list[j].indexOf('.') !== 0) {
-			locals.projects[dir][project] = {
-				info: JSON.parse(fs.readFileSync('./public/' + dir + '/' + project + '/info.json'))
+var dirs = ['designs', 'webdev', 'programs'];
+
+//this sux
+var pages = {about: true, contact: true};
+
+for(var i = 0; i < dirs.length; i++) { pages[dirs[i]] = true }
+
+//get the info for our files
+var scrapeFiles = function() {
+	locals.projects = {};
+	files = {}
+
+	for(var i = 0; i < dirs.length; i++) {
+		var dir = dirs[i];
+		var list = fs.readdirSync('./public/' + dir);
+
+		locals.projects[dir] = {}; //list;
+
+		for(var j = 0; j < list.length; j++) {
+			var project = list[j];
+
+			if(list[j].indexOf('.') !== 0) {
+				locals.projects[dir][project] = {
+					info: JSON.parse(fs.readFileSync('./public/' + dir + '/' + project + '/info.json'))
+				}
 			}
+
+			//for web dev
+			files[project] = dir;
 		}
-		
-		//for web dev
-		files[project] = dir;
 	}
 }
 
 //real stuff
 //shortcuts for files
 app.get('/:project', function(req, res, next) {
+	scrapeFiles();
+	
 	var project = req.params.project;
 	var dir = files[project];
 	
@@ -56,10 +67,19 @@ app.get('/:project', function(req, res, next) {
 });
 
 //static files
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public', {index: false}));
 
 //the main page
-app.get('*', function(req, res) {
+app.get('/:cat?/:project?/:file?', function(req, res, next) {
+	scrapeFiles();
+	
+	if(req.params.cat) {
+		if(!pages[req.params.cat] && !dirs[req.params.cat]) return next();
+		
+		if(req.params.project)
+			if(!files[req.params.project]) return next();
+	}
+	
 	//this is hacky but cheaper than a rendering engine (?)
 	var body = fs.readFileSync('./public/home.html', {encoding: 'utf8'});
 	

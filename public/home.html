@@ -57,8 +57,18 @@
 				</div>
 			</li>
 			
-			<li class="page centerbg" id="contact">
-				bbbb
+			<li class="page" id="contact">
+				<form id="contact">
+					<label for="email">Email</label>
+					<input id="email" type="text" placeholder="Enter your email" required>
+					
+					<label for="body">Message</label>
+					<textarea id="body" Placeholder="Enter your message" required></textarea>
+					
+					<input id="submit" type="submit" value="Contact me">
+					
+					<p>You can also send me an email at <a href="mailto://">andrew.ault@outlook.com</a>.</p>
+				</form>
 			</li>
 		</ul>
 		
@@ -85,8 +95,8 @@
 					</div>
 				</div>
 				
-				<div id="external" ng-show="curProject.info.cat == 'webdev' || curProject.info.type == 'web'">
-					<a ng-href="/{{curProject.info.name}}">Go to website</a>
+				<div id="external" ng-show="curProject.info.cat == 'webdev' || curProject.info.href">
+					<a ng-href="{{curProject.info.href || '/' + curProject.info.name}}" ng-bind="curProject.info.link || 'Go to website'"></a>
 				</div>
 			
 				<div id="info">
