@@ -10,19 +10,24 @@
 //variables
 @font: 		Montserrat;
 @bodyFont: 	Open Sans;
+@bodySize: 	14px;
+@bodyLnHt: 	1.618em;
 @transDur: 	0.3s;
 
 //the basics
 h1, h2, h3 {
 	font-family:@font;
 	text-transform:uppercase;
-	
-	h1 { font-size:48px }
-
-	h2 { font-size:20px }
-
-	h3 { font-size:30px }
 }
+
+h1 {
+	font-size:32px;
+	text-align:center;
+}
+
+h2 { font-size:24px }
+
+h3 {  }
 
 .centerbg {
 	&:before {
@@ -109,7 +114,6 @@ header {
 		right:50%;
 		margin-right:-230px;
 		
-		background:#fff;
 		text-align:center;
 		
 		transition-property:right, margin-right;
@@ -148,7 +152,6 @@ ul#pages {
 		position:relative;
 		display:block;
 		width:100%;
-		height:0;
 		min-height:100%;
 		outline:1px solid #000;
 		
@@ -197,7 +200,7 @@ ul#pages {
 			z-index:0;
 			
 			&, span, span:before {
-				transition-property:background opacity;
+				transition-property:background, opacity;
 				transition-duration:@transDur;
 			}
 			
@@ -236,7 +239,7 @@ ul#pages {
 }
 
 #intro {
-	height:100%;
+	height:0;
 	
 	&:after {
 		display:none;
@@ -254,6 +257,36 @@ ul#pages {
 	}
 }
 
+#about {
+	padding-bottom:100px;
+	
+	.body {
+		position:relative;
+		width:554px;
+		left:50%;
+		margin-left:-300px;
+		top:100px;
+		padding-bottom:100px;
+		
+		text-align:left;
+		font-family:@bodyFont;
+		font-size:@bodySize;
+		
+		p {
+			margin-bottom:1.618em;
+			line-height:@bodyLnHt;
+			
+			&:not(.c) {
+				text-indent:2.5em;
+			}
+			
+			&.c {
+				text-align:center;
+			}
+		}
+	}
+}
+
 #contact {
 	form {
 		position:absolute;
@@ -261,6 +294,7 @@ ul#pages {
 		width:600px;
 		right:50%;
 		margin-right:-300px;
+		padding-bottom:100px;
 		
 		text-align:left;
 		
@@ -291,8 +325,8 @@ ul#pages {
 		}
 		
 		p {
-			font-size:14px;
-			line-height:26.5px;
+			font-size:@bodySize;
+			line-height:@bodyLnHt;
 			
 			a {
 				font-size:inherit;
@@ -318,6 +352,7 @@ ul#pages {
 		bottom:30px;
 		left:50%;
 		margin-left:-450px;
+		overflow-y:scroll;
 		
 		background:#fff;
 		
@@ -426,6 +461,21 @@ ul#pages {
 				font-size:20px;
 				text-decoration:none;
 				font-family:@bodyFont;
+			}
+		}
+		
+		#info {
+			.title {
+				margin-bottom:10px;
+			}
+			
+			.desc {
+				margin-bottom:50px;
+				
+				font-family:@bodyFont;
+				font-size:@bodySize;
+				line-height:@bodyLnHt;
+				text-indent:2.5em;
 			}
 		}
 	}

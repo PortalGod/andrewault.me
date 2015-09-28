@@ -40,6 +40,14 @@ var scrapeFiles = function() {
 	}
 }
 
+//hacky fake rendering engine
+var appendHead = function(body, html) {
+	var match = body.match(/<head>\s*?(?:<meta[^>]*>)/i);
+	var index = match.index + match[0].length;
+
+	return body.substr(0, index) + html + body.substr(index);
+}
+
 //real stuff
 //shortcuts for files
 app.get('/:project', function(req, res, next) {
@@ -53,15 +61,9 @@ app.get('/:project', function(req, res, next) {
 		
 		var body = fs.readFileSync('./public' + path + '/index.html', {encoding: 'utf8'});
 		
-		var index = body.indexOf('<head>') + 6;
+		body = appendHead(body, '<base href="' + path + '/">');
 		
-		res.write(body.substr(0, index));
-		
-		res.write('<base href="' + path + '/">');
-		
-		res.write(body.substr(index));
-		
-		res.end();
+		res.end(body);
 	} else
 		next();
 });
@@ -80,18 +82,11 @@ app.get('/:cat?/:project?/:file?', function(req, res, next) {
 			if(!files[req.params.project]) return next();
 	}
 	
-	//this is hacky but cheaper than a rendering engine (?)
 	var body = fs.readFileSync('./public/home.html', {encoding: 'utf8'});
 	
-	var index = body.indexOf('<head>') + 6;
+	var body = appendHead(body, '<script>var locals=' + JSON.stringify(locals) + '</script>');
 	
-	res.write(body.substr(0, index));
-	
-	res.write('<script>var locals=' + JSON.stringify(locals) + '</script>');
-	
-	res.write(body.substr(index));
-	
-	res.end();
+	res.end(body);
 });
 
 //404

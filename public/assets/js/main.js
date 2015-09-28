@@ -4,7 +4,7 @@ TODO:
 */
 
 //angular setup
-var app = angular.module('app', []).run(function($rootScope) { $rootScope.locals = locals; });
+var app = angular.module('app', []).run(function($rootScope) { $rootScope.locals = locals; $rootScope.initTime = Date.now(); console.log(Date.now()) });
 
 //util functions
 //dom element from #id
@@ -185,7 +185,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		//+ 1 just to make sure the header gets styled
 		var cat = getElem('/' + parts[0]);
-		window.scroll(0, cat.offsetTop + 1);
+		window.scroll(0, cat.offsetTop);
+		scrollEvent();
 		
 		if(parts[1]) {
 			var $scope = angular.element(cat).scope();
