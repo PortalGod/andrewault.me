@@ -1,5 +1,5 @@
 //reset
-* {
+*, *:before, *:after {
 	margin:0;
 	border:0;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -26,8 +26,6 @@ h1 {
 }
 
 h2 { font-size:24px }
-
-h3 {  }
 
 .centerbg {
 	&:before {
@@ -170,6 +168,10 @@ ul#pages {
 			text-align:right;
 		}
 		
+		&.gridded {
+			padding-top:100px;
+		}
+		
 		.content {
 			.center;
 			width:900px;
@@ -177,26 +179,27 @@ ul#pages {
 		
 		.grid {
 			position:relative;
-			top:100px;
 			width:900px;
 			left:50%;
 			margin-left:-450px;
 			
 			font-size:0;
+			text-align:left;
 		}
 		
 		.project {
 			position:relative;
-			display:block;
+			display:inline-block;
 			width:290px;
 			height:190px;
 			margin-right:15px;
-			float:left;
+			margin-bottom:15px;
 			
 			.centerbg;
 			
 			background-position:center center;
 			background-size:290px 190px;
+			text-align:center;
 			z-index:0;
 			
 			&, span, span:before {
@@ -241,6 +244,10 @@ ul#pages {
 #intro {
 	height:0;
 	
+	.content {
+		width:auto !important;
+	}
+	
 	&:after {
 		display:none;
 	}
@@ -276,11 +283,10 @@ ul#pages {
 			margin-bottom:1.618em;
 			line-height:@bodyLnHt;
 			
-			&:not(.c) {
-				text-indent:2.5em;
-			}
+			text-indent:2.5em;
 			
 			&.c {
+				text-indent:0;
 				text-align:center;
 			}
 		}
@@ -476,6 +482,129 @@ ul#pages {
 				font-size:@bodySize;
 				line-height:@bodyLnHt;
 				text-indent:2.5em;
+			}
+		}
+	}
+}
+
+//media queries :(
+@media (max-width:320px) {
+	h1 { font-size:30px; }
+	h2 { font-size:18px; }
+	
+	header {
+		#top { display:none; }
+		
+		nav {
+			width:100%;
+			right:0 !important;
+			margin-right:0 !important;
+			padding:0 10px;
+			
+			a {
+				width:20%;
+				font-size:10px;
+				font-family:@bodyFont;
+			}
+		}
+	}
+	
+	ul#pages {
+		li.page {
+			&:after {
+				width:auto;
+				height:40px;
+				top:60px;
+				left:10px;
+				
+				text-align:left;
+				line-height:40px;
+			}
+			
+			.grid {
+				width:290px;
+				margin-left:-145px;
+			}
+		}
+		
+		.content {
+			width:300px;
+		}
+	}
+	
+	#intro {
+		h1 { margin-bottom:16px; }
+		#logo { bottom:16px; }
+	}
+	
+	#about {
+		.body {
+			width:300px;
+			margin-left:-150px;
+			padding-bottom:40px;
+			
+			font-size:11px;
+			
+			p {	text-indent:1.618em; }
+		}
+	}
+	
+	#contact {
+		form {
+			width:300px;
+			margin-right:-150px;
+			
+			* {
+				font-size:12px;
+			}
+			
+			#body {
+				height:150px;
+			}
+			
+			p {
+				font-size:11px;
+			}
+		}
+	}
+	
+	#modal #window {
+		top:10px; bottom:10px;
+		width:300px;
+		margin-left:-150px;
+		
+		#carousel {
+			width:280px;
+			height:280px;
+			
+			.image img {
+				max-width:280px;
+				max-height:280px;
+			}
+			
+			#left, #right {
+				display:none;
+			}
+		}
+		
+		#thumbnails {
+			width:280px;
+			height:auto;
+			
+			.thumb {
+				width:50px;
+				height:50px;
+			}
+		}
+		
+		#info {
+			.title, .desc {
+				padding:0 10px;
+			}
+			
+			.desc {
+				font-size:11px;
+				text-indent:1.618em;
 			}
 		}
 	}
