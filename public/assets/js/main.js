@@ -4,7 +4,7 @@ TODO:
 */
 
 //angular setup
-var app = angular.module('app', []).run(function($rootScope) { $rootScope.locals = locals; $rootScope.initTime = Date.now(); console.log(Date.now()) });
+var app = angular.module('app', []).run(function($rootScope) { $rootScope.locals = locals; $rootScope.initTime = Date.now() });
 
 //util functions
 //dom element from #id
