@@ -59,7 +59,7 @@
 					   class="project"
 					   ng-href="{{project.info.path}}"
 					   ng-attr-data-name="{{project.info.name}}"
-					   ng-style="{'background-image': 'url({{project.info.path}}/preview.png)'}"
+					   ng-style="{'background-image': 'url(' + project.info.path + '/preview.png)'}"
 					   ng-click="$event.preventDefault(); popup(project)">
 						
 						<span ng-bind="project.info.title"></span>
