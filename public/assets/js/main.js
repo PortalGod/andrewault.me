@@ -241,3 +241,47 @@ document.addEventListener('DOMContentLoaded', function() {
 			requestAnimationFrame(doScroll);
 	}
 });
+
+//setup for swiping
+var ox, oy, isImage;
+
+document.addEventListener('touchstart', function(e) {
+	ox = e.touches[0].clientX;
+	oy = e.touches[0].clientY;
+	
+	isImage = e.target.parentNode.classList.contains('image');
+});
+
+document.addEventListener('touchmove', function(e) {
+	if(!ox || !oy) return;
+	
+	var dx = e.touches[0].clientX - ox;
+	var dy = e.touches[0].clientY - oy;
+	
+	var adx = Math.abs(dx);
+	var ady = Math.abs(dy);
+	
+	var scope = angular.element(e.target).scope();
+	
+	//make sure there's actually a swipe
+	if(adx + ady > 50) {
+		//make sure our window is open
+		if(document.getElementById('modal').style.display !== 'none') {
+			//horizontal
+			if(adx > ady) {
+				//only need this for changing images
+				//if(!isImage) return;
+
+				scope.moveCarousel(dx / adx);
+				scope.$apply();
+			} else {
+				//swipe down to close
+				if(dy < 0) return;
+
+				scope.hidePopup();
+			}
+		}
+		
+		ox = oy = isImage = null;
+	}
+});
