@@ -69,13 +69,15 @@
 			
 			<li class="page" id="contact">
 				<form id="contact">
+					<p id="response" ng-show="response" ng-bind="response" ng-class="{error: response !== 'Thanks!'}"></p>
+				
 					<label for="email">Email</label>
-					<input id="email" type="text" placeholder="Enter your email" required>
+					<input id="email" type="text" placeholder="Enter your email" ng-model="email" ng-class="{invalid: validateEmail()}" ng-disabled="contacted">
 					
 					<label for="body">Message</label>
-					<textarea id="body" Placeholder="Enter your message" required></textarea>
+					<textarea id="body" placeholder="Enter your message" ng-model="body" ng-class="{invalid: !body.length}" ng-disabled="contacted"></textarea>
 					
-					<input id="submit" type="submit" value="Contact me">
+					<input id="submit" type="submit" value="Contact me" ng-click="submitForm()" ng-disabled="contacted">
 					
 					<p>You can also send me an email at <a href="mailto:contact@andrewault.me">contact@andrewault.me</a>.</p>
 				</form>
@@ -98,7 +100,7 @@
 						<a ng-repeat="image in curProject.info.files track by $index"
 						   class="thumb"
 						   ng-href="{{curProject.info.path}}{{$index ? '/' + $index : ''}}"
-						   ng-style="{'background-image': 'url({{curProject.info.path}}/{{image[1]}})'}"
+						   ng-style="{'background-image': 'url({{curProject.info.path}}/{{image[0]}})'}"
 						   ng-class="{active: curProject.curFile == $index}"
 						   ng-click="$event.preventDefault(); curProject.curFile = $index; moveCarousel()">
 						</a>

@@ -1,6 +1,6 @@
 /*
 TODO:
-	:)
+	csrf contact form?
 */
 
 //angular setup
@@ -45,7 +45,7 @@ var scrollEvent;
 var baseTitle = 'Andrew Ault';
 
 //angular stuff
-app.controller('ctrl', function($scope, $document) {
+app.controller('ctrl', function($scope, $document, $http) {
 	//add info to our projects
 	for(var cat in $scope.locals.projects) {
 		if($scope.locals.projects.hasOwnProperty(cat)) {
@@ -108,6 +108,39 @@ app.controller('ctrl', function($scope, $document) {
 			path += '/' + $scope.curProject.curFile;
 		
 		setPath(path);
+	}
+	
+	
+	//contact form submit
+	$scope.email = $scope.body = '';
+	
+	$scope.validateEmail = function() {
+		return $scope.email.search(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gi) < 0;
+	}
+	
+	$scope.submitForm = function() {
+		if($scope.contacted) return;
+		
+		if(document.querySelectorAll('#contact .invalid').length > 0) {
+			var inputs = document.querySelectorAll('#contact *[placeholder]');
+			
+			for(var i = 0; i < inputs.length; i++)
+				inputs[i].classList.add('ng-touched');
+			
+			return;
+		}
+		
+		$http.post('/contact', {
+			email: 	$scope.email,
+			body: 	$scope.body
+		}).then(function() {
+			$scope.response = 'Thanks!';
+		}, function() {
+			$scope.response = 'Error :(';
+			$scope.contacted = false;
+		});
+		
+		$scope.contacted = true;
 	}
 });
 
@@ -229,7 +262,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 	
 	//abstract it
-	
 	var scrollTo = function(elem) {
 		targetY = elem.offsetTop;
 		
@@ -263,25 +295,26 @@ document.addEventListener('touchmove', function(e) {
 	
 	var scope = angular.element(e.target).scope();
 	
-	//make sure there's actually a swipe
-	if(adx + ady > 50) {
-		//make sure our window is open
-		if(document.getElementById('modal').style.display !== 'none') {
-			//horizontal
-			if(adx > ady) {
+	//make sure our window is open
+	if(document.getElementById('modal').style.display !== 'none') {
+		//horizontal
+		if(adx > ady) {
+			if(adx > 50) {
 				//only need this for changing images
 				//if(!isImage) return;
 
 				scope.moveCarousel(dx / adx);
 				scope.$apply();
-			} else {
-				//swipe down to close
-				if(dy < 0) return;
-
-				scope.hidePopup();
+				
+				ox = oy = isImage = null;
 			}
+		} else if(ady > 200) {
+			//swipe down to close
+			if(dy < 0) return;
+
+			scope.hidePopup();
 		}
-		
-		ox = oy = isImage = null;
 	}
+
+	ox = oy = isImage = null;
 });

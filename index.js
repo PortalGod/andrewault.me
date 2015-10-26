@@ -1,7 +1,16 @@
-var express = require('express'),
-	fs 		= require('fs');
+var express 	= require('express'),
+	fs 			= require('fs'),
+	qs 			= require('querystring'),
+	nodemailer 	= require('nodemailer');
+
+var config 		= require('./config')
 
 var app = module.exports = express();
+
+//error handling
+var handleErr = function(err) {
+	throw err;
+}
 
 //automatically get all of our projects
 var locals = {}
@@ -92,6 +101,59 @@ app.get('/:cat?/:project?/:file?', function(req, res, next) {
 //404
 app.get('*', function(req, res) {
 	res.status(404).type('html').end('404');
+});
+
+//contact
+var transporter = nodemailer.createTransport({
+	host: 	'smtp-mail.outlook.com',
+	secureConnection: false,
+	port: 	587,
+	tls: {
+		ciphers: 'SSLv3'
+	},
+	auth: {
+		user: config.emailUser,
+		pass: config.emailPass
+	}
+});
+
+app.post('/contact', function(req, res) {
+	res.type('html');
+	
+	var body = '';
+	
+	req.on('data', function(chunk) {
+		body += chunk;
+		
+		if(body.length > 1e6) {
+			res.status(413).end();
+			
+			request.connection.destroy();
+		}
+	});
+	
+	req.on('end', function() {
+		var post = JSON.parse(body);
+		
+		if(!post.email || !post.body) return res.status(413).end();
+		
+		transporter.sendMail({
+			from: 		post.email,
+			sender: 	post.email,
+			to: 		config.toEmail,
+			subject: 	'Contact form',
+			text: 		post.body
+		}, function(err, info) {
+			if(err) {
+				res.status(500).end();
+				return handleErr(err);
+			}
+			
+			console.log(info);
+		
+			res.status(200).end();
+		});
+	});
 });
 
 //start it up

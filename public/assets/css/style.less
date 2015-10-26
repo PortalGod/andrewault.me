@@ -312,6 +312,13 @@ ul#pages {
 		input, textarea {
 			margin-bottom:10px;
 			border:1px solid #000;
+			
+			transition:@transDur box-shadow;
+			
+			&.ng-touched.invalid {
+				border-color:#c32;
+				box-shadow:#c32 0 0 4px;
+			}
 		}
 		
 		#email {
@@ -337,6 +344,28 @@ ul#pages {
 			a {
 				font-size:inherit;
 			}
+		}
+		
+		#response {
+			text-align:center;
+			line-height:30px;
+			color:#3c6;
+			
+			height:30px;
+			max-height:0;
+			overflow:hidden;
+			
+			transition:@transDur max-height;
+			
+			//this is sketchy but it stops it from animating on page load
+			&.ng-binding { max-height:30px }
+			
+			&.ng-hide {
+				display:block !important;
+				max-height:0;
+			}
+			
+			&.error { color:#c32 }
 		}
 	}
 }

@@ -2,8 +2,8 @@
 	"title": 	"Student Presidency Posters",
 	"desc": 	"",
 	"files": 	[
-		["rosiehalf.jpg", "rosie.jpg"],
-		["unclesamhalf.jpg", "unclesam.jpg"],
-		["hopehalf.jpg", "hope.jpg"]
+		["rosiehalf.jpg", 		"rosie.jpg"],
+		["unclesamhalf.jpg", 	"unclesam.jpg"],
+		["hopehalf.jpg", 		"hope.jpg"]
 	]
 }
