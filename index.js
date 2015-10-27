@@ -65,7 +65,7 @@ app.get('/:project', function(req, res, next) {
 	var project = req.params.project;
 	var dir = files[project];
 	
-	if(dir && (dir == 'webdev' || locals.projects[dir][project].info.type == 'web')) {
+	if(dir && (dir == 'webdev' || locals.projects[dir][project].info.href)) {
 		var path = '/' + dir + '/' + project;
 		
 		var body = fs.readFileSync('./public' + path + '/index.html', {encoding: 'utf8'});

@@ -335,20 +335,20 @@ app.run(function($rootScope, $q, $http, $location) {
 	//tab stuff
 	
 	//why do I have to do this
-	if(!$location.hash()) $location.hash('/');
+	//if(!$location.hash()) $location.hash('').replace();
 	
 	var tabs = {all: 0, items: 1, cards: 2, trinkets: 3, pills: 4, runes: 5, misc: 6};
 	
 	$rootScope.setTab = function(tab) {
-		$location.hash(tab);
+		$location.path(tab).replace();
 	}
 	
 	$rootScope.isTab = function(tab) {
-		return $location.hash() == tab ? 'active' : false;
+		return $location.path() == '/' + tab ? 'active' : false;
 	}
 	
 	$rootScope.getTab = function(tab) {
-		return tabs[$location.hash() || 'all'];
+		return tabs[$location.path().substr(1) || 'all'];
 	}
 	
 	//after loading data
