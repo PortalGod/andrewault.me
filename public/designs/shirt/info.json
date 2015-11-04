@@ -1,0 +1,13 @@
+{
+	"title": 	"We the Broken Shirt",
+	"desc": 	"",
+	"files": 	[
+		["firsthalf.png", 		"firstfull.png"],
+		["secondhalf.png", 		"secondfull.png"],
+		["finalhalf.png", 		"finalfull.png"],
+		["monogramhalf.png", 	"monogramfull.png"],
+		["floralmonohalf.png", 	"floralmonofull.png"],
+		["floralhalf.png", 		"floralfull.png"],
+		["shirthalf.jpg", 		"shirtfull.jpg"]
+	]
+}
