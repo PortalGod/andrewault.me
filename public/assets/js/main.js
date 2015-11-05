@@ -295,6 +295,8 @@ document.addEventListener('touchmove', function(e) {
 	
 	var scope = angular.element(e.target).scope();
 	
+	console.log(adx, ady);
+	
 	//make sure our window is open
 	if(document.getElementById('modal').style.display !== 'none') {
 		//horizontal
@@ -313,8 +315,8 @@ document.addEventListener('touchmove', function(e) {
 			if(dy < 0) return;
 
 			scope.hidePopup();
+
+			ox = oy = isImage = null;
 		}
 	}
-
-	ox = oy = isImage = null;
 });
