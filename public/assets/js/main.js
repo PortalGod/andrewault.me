@@ -295,8 +295,6 @@ document.addEventListener('touchmove', function(e) {
 	
 	var scope = angular.element(e.target).scope();
 	
-	console.log(adx, ady);
-	
 	//make sure our window is open
 	if(document.getElementById('modal').style.display !== 'none') {
 		//horizontal
