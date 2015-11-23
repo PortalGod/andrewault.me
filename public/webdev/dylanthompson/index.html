@@ -1,0 +1,40 @@
+<!doctype html5>
+<html ng-app="app" ng-controller="baseCtrl">
+	<head>
+		<meta charset="utf-8">
+		
+		<title ng-bind="title">Dylan Thompson</title>
+		
+		<!-- <base href="/"> -->
+		
+		<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu:500,300' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet/less" href="assets/css/style.less">
+		<link rel="stylesheet" href="assets/fonts/fonts.css">
+		
+		<script src="assets/js/less.min.js"></script>
+		<script src="assets/js/angular.js"></script>
+		<script src="assets/js/angular-route.min.js"></script>
+		
+		<script src="assets/js/main.js"></script>
+	</head>
+	
+	<body>
+		<header ng-hide="hideHeader">
+			<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li><a href="/work">Work</a></li>
+				<li><a href="/" ng-include></a></li>
+				<li><a href="/shop">Shop</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</header>
+		
+		<main ng-view></main>
+		
+		<footer>
+			Website by <a href="http://andrewault.me">Andrew Ault</a> 2015
+		</footer>
+	</body>
+</html>

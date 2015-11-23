@@ -1,0 +1,13 @@
+@font-face {
+    src: url('nexaBlack.woff2') format('woff2');
+	
+    font-family:Nexa;
+    font-weight:bold;
+}
+
+@font-face {
+    src: url('nexaBook.woff2') format('woff2');
+	
+    font-family:Nexa;
+    font-weight:normal;
+}

@@ -1,0 +1,272 @@
+/* reset */
+*, *:before, *:after {
+	margin:0;
+	border:0;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	   -moz-box-sizing: border-box; /* Firefox, other Gecko */
+			box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+body { overflow:hidden; }
+
+/* variables */
+@headerHt: 	60px;
+
+/* util */
+.centerbg {
+	&:before {
+		content:' ';
+		display:inline-block;
+		height:100%;
+		vertical-align:middle;
+		margin-right:-0.25em;
+	}
+}
+
+.center {
+	display:inline-block;
+	vertical-align:middle;
+}
+
+.arrow {
+	&:before {
+		position:relative;
+		display:inline-block;
+		content:"";
+		top:2px;
+		width:20px;
+		height:20px;
+		border-right:2px solid #fff;
+		border-top:2px solid #fff;
+		margin-right:0.5em;
+	}
+}
+
+.r {
+	&:before {
+	 transform:rotate(45deg);
+	}
+}
+	
+.l {
+	&:before {
+		transform:rotate(-135deg);
+	}
+}
+
+/* header */
+header {
+	position:absolute;
+	width:100%;
+	height:@headerHt;
+	
+	text-align:center;
+	background:rgba(0, 0, 0, 0.618);
+	font-size:0;
+	z-index:1;
+	
+	ul { padding:0; }
+	
+	li {
+		display:inline-block;
+		width:80px;
+		vertical-align:top;
+		
+		list-style:none;
+		
+		a {
+			display:inline-block;
+			width:80px;
+			margin:10px 0;
+			height:@headerHt - 20px;
+			
+			line-height:@headerHt - 20px;
+			font-size:16px;
+			font-family:Lato;
+			text-transform:uppercase;
+			text-decoration:none;
+			color:#fff;
+			
+			transition:color 0.1s, border 0.1s;
+			
+			&.active {
+				border-bottom:2px solid #fff;
+			}
+			
+			&:hover {
+				color:#ccc;
+				
+				&.active { border-color:#ccc; }
+				
+				.st1 { fill:#ccc; }
+			}
+		}
+	}
+	
+	svg {
+		height:@headerHt - 20px;
+		vertical-align:middle;
+		
+		.st1 { transition:fill 0.1s; }
+	}
+}
+
+/* footer */
+footer {
+	position:absolute;
+	bottom:4px;
+	right:4px;
+	
+	font-size:12px;
+	font-family:Ubuntu;
+	font-weight:300;
+	color:#ddd;
+	
+	a {
+		color:#A2CCFF;
+		text-decoration:none;
+		
+		&:visited { color:#6085B2; }
+		
+		&:hover, &:visited:hover {
+			color:#BBDAFF;
+		}
+	}
+}
+
+main {
+	/* padding-top:60px; */
+}
+
+/* landing.html */
+#landing {
+	width:100%;
+	height:100%;
+	
+	text-align:center;
+	
+	.centerbg;
+	
+	#old, #new, #dots {
+		position:absolute;
+		width:100%;
+		height:100%;
+		top:0;
+	}
+	
+	#old {
+		background:url(../../assets/photos/landing/2.jpg) center center / cover;
+	}
+	
+	#dots {
+		background:url(../../assets/img/px.png) top left repeat;
+	}
+	
+	#info {
+		position:relative;
+		width:600px;
+		top:25px;
+		
+		font-family:Nexa;
+		color:#fff;
+		text-shadow:0 0 4px rgba(0,0,0,0.4);
+		
+		#logo svg {
+			position:absolute;
+			margin:-128px 0 0 -48px;
+			width:96px;
+			height:96px;
+			
+			path { fill:#fff; 
+			
+			transition: fill 0.5s;}
+			
+			&:hover path {
+				fill:#f00;
+			}
+		}
+		
+		p {
+			font-size:15px;
+		}
+		
+		h1 {
+			font-weight:bold;
+			font-size:40px;
+			text-transform:uppercase;
+			letter-spacing:10px;
+		}
+		
+		h2 {
+			font-weight:normal;
+			font-size:30px;
+		}
+		
+		a {
+			position:relative;
+			display:inline-block;
+			width:128px;
+			height:48px;
+			top:64px;
+			
+			border:2px solid #fff;
+			border-radius:4px;
+			text-align:center;
+			line-height:46px;
+			text-decoration:none;
+			text-transform:uppercase;
+			color:#fff;
+		}
+		
+		.center;
+	}
+}
+
+/* blog.html */
+
+/* work.html */
+
+/* shop.html */
+
+/* contact.html */
+#contact {
+	text-align:center;
+	padding-top:@headerHt / 2;
+	
+	background:#666;
+	
+	form {
+		width:618px;
+		padding:10px;
+
+		font-family:Lato;
+		font-size:16px;
+		text-align:left;
+		background:#ddd;
+		
+		#email, #body {
+			width:100%;
+			margin:0.25em 0 1em;
+			padding:0.25em;
+			
+			font-family:Lato;
+			font-size:15px;
+		}
+		
+		#body {
+			height:128px;
+			margin-bottom:10px;
+			resize:none;
+		}
+		
+		#submit {
+			float:right;
+			padding:0.25em;
+			
+			font-size:15px;
+			border:1px solid #666;
+			border-radius:4px;
+			background:#fff;
+		}
+	}
+}
