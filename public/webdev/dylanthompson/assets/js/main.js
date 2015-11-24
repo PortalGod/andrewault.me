@@ -54,16 +54,37 @@ app.config(function($routeProvider, $locationProvider) {
 
 app.controller('baseCtrl', function() {});
 
-app.controller('landingCtrl', function($rootScope) {
+app.controller('landingCtrl', function($rootScope, $interval, $timeout) {
 	//hide the bar at the top
 	$rootScope.hideHeader = true;
 	
 	//random intros
 	document.getElementById('intro').innerHTML = intros[Math.floor(Math.random() * intros.length)];
-	
-	console.log(intros);
 
-	//setting up the carousel
+	//pictures
+	var oldImg = document.getElementById('old'),
+		newImg = document.getElementById('new');
+	
+	var curPicture = 0;
+	var numPictures = 4;
+	
+	var path = 'assets/photos/landing/';
+	
+	$interval(function() {
+		curPicture = (curPicture + 1) % numPictures;
+		
+		newImg.style.backgroundImage = 'url(' + path + (curPicture + 1) + '.jpg)';
+		
+		newImg.style.opacity = 1;
+		
+		$timeout(function() {
+			oldImg.style.backgroundImage = newImg.style.backgroundImage;
+			
+			newImg.style.opacity = 0;
+		}, 1 * 1000);
+	}, 4 * 1000);
+		
+	oldImg.style.backgroundImage = 'url(' + path + (curPicture + 1) + '.jpg)';
 });
 
 /* home.html */

@@ -154,13 +154,14 @@ main {
 		top:0;
 	}
 	
-	#old {
-		background:url(../../assets/photos/landing/2.jpg) center center / cover;
+	#old, #new { background:center center / cover; }
+	
+	#new {
+		transition:opacity 1s;
+		opacity:0;
 	}
 	
-	#dots {
-		background:url(../../assets/img/px.png) top left repeat;
-	}
+	#dots { background:url(../../assets/img/px.png) top left / 1px 1px repeat; }
 	
 	#info {
 		position:relative;
@@ -177,13 +178,10 @@ main {
 			width:96px;
 			height:96px;
 			
-			path { fill:#fff; 
+			path { fill:#fff; }
 			
-			transition: fill 0.5s;}
-			
-			&:hover path {
-				fill:#f00;
-			}
+    		-webkit-filter: drop-shadow( 0 0 4px rgba(0,0,0,0.4) );
+            		filter: drop-shadow( 0 0 4px rgba(0,0,0,0.4) );
 		}
 		
 		p {
@@ -216,6 +214,14 @@ main {
 			text-decoration:none;
 			text-transform:uppercase;
 			color:#fff;
+			
+			transition:background 0.5s;
+			
+			&:hover {
+				background:#fff;
+				color:#000;
+				text-shadow:none;
+			}
 		}
 		
 		.center;
