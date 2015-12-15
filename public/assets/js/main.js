@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var page = document.getElementsByClassName('page')[0];
 	var links = document.querySelectorAll('nav a');
 	var modal = document.getElementById('modal');
+	var intro = document.getElementById('intro');
 	
 	scrollEvent = function(e) {		
 		//stupid firefox
@@ -183,6 +184,9 @@ document.addEventListener('DOMContentLoaded', function() {
 					link.classList.remove('active');
 			}
 		}
+		
+		//parallax background
+		intro.style.backgroundPosition = '0 ' + (-100 - (scroll / 2)) + 'px';
 	}
 
 	window.addEventListener('scroll', scrollEvent);
