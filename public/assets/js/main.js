@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 		
 		//parallax background
-		intro.style.backgroundPosition = '0 ' + (-100 - (scroll / 2)) + 'px';
+		//intro.style.backgroundPosition = '0 ' + (-100 - (scroll / 2)) + 'px';
 	}
 
 	window.addEventListener('scroll', scrollEvent);
