@@ -36,7 +36,7 @@ env.initScene = function() {
 	env.camera.position.y = a;
 	env.camera.rotateOnAxis(new THREE.Vector3(1, 0, 0), -Math.PI / 2);
 
-	env.controls = new THREE.EditorControls(env.camera);
+	//env.controls = new THREE.EditorControls(env.camera);
 
 	env.clock = new THREE.Clock();
 
@@ -88,6 +88,7 @@ env.setupScene = function() {
 	var shadowBlur = 16;
 
 	//origin lines
+	/*
 	{
 		var origin = new THREE.Vector3(0, 0, 0);
 
@@ -95,6 +96,7 @@ env.setupScene = function() {
 		env.scene.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), origin, env.dpi, 0x00ff00, 8, 8));
 		env.scene.add(new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), origin, env.dpi, 0x0000ff, 8, 8));
 	}
+	*/
 
 	//lights
 	{
