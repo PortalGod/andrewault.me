@@ -1,0 +1,98 @@
+<!doctype html5>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="assets/css/normalize.css">
+
+		<title>Andrew Ault</title>
+
+		<style>
+			body {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+
+				background: #333;
+				color: #fff;
+			}
+
+			#options {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 384px;
+				height: 96px;
+				margin-left: -192px;
+				margin-top: -48px;
+			}
+
+			.center {
+				display: block;
+				width: 100%;
+				height: 32px;
+
+				text-align: center;
+				color: #aaa;
+			}
+
+			.option {
+				display: table-cell;
+				width: 192px;
+				height: 64px;
+				float: left;
+
+				text-align: center;
+				vertical-align: middle;
+			}
+
+			#left {
+				width: 191px;
+
+				border-right: 1px solid #aaa;
+			}
+
+			a {
+				position: relative;
+				display: inline-block;
+				top: 50%;
+				height: 40px;
+				margin-top: -20px;
+
+				color: #ddd;
+				text-decoration: none;
+
+				transition: color 0.25s;
+			}
+
+			a:hover {
+				color: #b96;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="options">
+			<span class="center">Select an option:</span>
+
+			<div id="left" class="option">
+				<a href="full.html" id="full">
+					<strong>Full experience</strong>
+					<br />
+					<span>WebGL Required</span>
+				</a>
+			</div>
+
+			<div class="option">
+				<a href="basic.html" id="basic">
+					<strong>Basic version</strong>
+					<br />
+					<span>For older browsers</span>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>
